@@ -540,6 +540,60 @@
             </div>
         </section>
 
+        <!-- Section 5: Contact & Feedback -->
+        <section class="section contact" id="contact">
+            <div class="section-header">
+                <h2 class="section-title">Get in Touch & Feedback <span class="accent-dot">.</span></h2>
+            </div>
+            
+            <div class="contact-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;">
+                <div class="contact-info glass-panel" style="padding: 3rem;">
+                    <h3 style="font-size: 2.2rem; margin-bottom: 1rem; color: #fff;">Let's build something <span class="gradient-text">productive</span>.</h3>
+                    <p class="desc" style="margin-bottom: 2.5rem; font-size: 1.1rem;">Whether you have a technical question, a massive project proposition, or simply want to leave feedback regarding this portfolio's 3D interactions, my inbox is constantly open.</p>
+                    
+                    <div class="contact-cards" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <a href="mailto:tanmay.pondhe@example.com" class="contact-card" style="display: flex; align-items: center; gap: 1.2rem; padding: 1.5rem; border-radius: 16px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); text-decoration: none; color: white; transition: all 0.3s;">
+                            <div class="icon-box" style="width: 55px; height: 55px; border-radius: 50%; background: rgba(59, 130, 246, 0.1); display: flex; align-items: center; justify-content: center; color: #60a5fa; font-size: 1.4rem; transition: background 0.3s, color 0.3s;">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1.15rem; margin-bottom: 0.2rem;">Direct Email</h4>
+                                <span style="font-size: 0.95rem; color: #a1a1aa;">tanmay.pondhe@example.com</span>
+                            </div>
+                        </a>
+                        
+                        <a href="https://linkedin.com/in/tanmaypondhe" target="_blank" class="contact-card" style="display: flex; align-items: center; gap: 1.2rem; padding: 1.5rem; border-radius: 16px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); text-decoration: none; color: white; transition: all 0.3s;">
+                            <div class="icon-box" style="width: 55px; height: 55px; border-radius: 50%; background: rgba(139, 92, 246, 0.1); display: flex; align-items: center; justify-content: center; color: #a78bfa; font-size: 1.4rem; transition: background 0.3s, color 0.3s;">
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1.15rem; margin-bottom: 0.2rem;">LinkedIn Network</h4>
+                                <span style="font-size: 0.95rem; color: #a1a1aa;">Send a connection request</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="feedback-form glass-panel" style="padding: 3.5rem;">
+                    <form id="portfolio-form" onsubmit="event.preventDefault(); alert('Message conceptualized! In a production application, this securely POSTs to an API endpoint.');">
+                        <div class="form-group" style="margin-bottom: 1.8rem;">
+                            <label style="display: block; margin-bottom: 0.6rem; font-size: 0.95rem; color: var(--text-secondary); font-weight: 500;">Your Name</label>
+                            <input type="text" placeholder="Jane Doe" required style="width: 100%; padding: 1.2rem 1.5rem; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; color: white; font-family: 'Inter', sans-serif; font-size: 1.05rem; outline: none; transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 1.8rem;">
+                            <label style="display: block; margin-bottom: 0.6rem; font-size: 0.95rem; color: var(--text-secondary); font-weight: 500;">Email Address</label>
+                            <input type="email" placeholder="jane@example.com" required style="width: 100%; padding: 1.2rem 1.5rem; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; color: white; font-family: 'Inter', sans-serif; font-size: 1.05rem; outline: none; transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 2.5rem;">
+                            <label style="display: block; margin-bottom: 0.6rem; font-size: 0.95rem; color: var(--text-secondary); font-weight: 500;">Project Details / Feedback</label>
+                            <textarea rows="4" placeholder="Your portfolio looks incredible! I want to talk about..." required style="width: 100%; padding: 1.2rem 1.5rem; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; color: white; font-family: 'Inter', sans-serif; font-size: 1.05rem; outline: none; resize: vertical; transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;"></textarea>
+                        </div>
+                        <button type="submit" class="cta-btn primary-btn" style="width: 100%; justify-content: center; font-size: 1.1rem; padding: 1.2rem;"><i class="fas fa-paper-plane"></i> Submit Secure Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
         <!-- Dynamic Footer / CTA -->
         <footer class="footer section">
             <div class="footer-content glass-panel parallax-footer">

@@ -1,17 +1,36 @@
-// Professional Cursor Tracking
+// Advanced Liquid Interactivity Cursor
 const cursor = document.querySelector('.cursor');
 const cursorDot = document.querySelector('.cursor-dot');
 
 if(cursor && cursorDot) {
-    document.addEventListener('mousemove', (e) => {
-        cursorDot.style.left = `${e.clientX}px`;
-        cursorDot.style.top = `${e.clientY}px`;
-        setTimeout(() => {
-            if(cursor) {
-                cursor.style.left = `${e.clientX}px`;
-                cursor.style.top = `${e.clientY}px`;
-            }
-        }, 50);
+    // GSAP quickTo for 60fps physics tracking
+    gsap.set(cursor, {xPercent: -50, yPercent: -50});
+    gsap.set(cursorDot, {xPercent: -50, yPercent: -50});
+
+    let xTo = gsap.quickTo(cursor, "x", {duration: 0.6, ease: "power3"});
+    let yTo = gsap.quickTo(cursor, "y", {duration: 0.6, ease: "power3"});
+    
+    let xToDot = gsap.quickTo(cursorDot, "x", {duration: 0.1, ease: "power3"});
+    let yToDot = gsap.quickTo(cursorDot, "y", {duration: 0.1, ease: "power3"});
+
+    window.addEventListener("mousemove", e => {
+        xTo(e.clientX);
+        yTo(e.clientY);
+        xToDot(e.clientX);
+        yToDot(e.clientY);
+    });
+
+    // Magnetic expansion on interactive elements
+    const interactables = document.querySelectorAll('a, button, input, textarea');
+    interactables.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            gsap.to(cursor, { scale: 2.2, backgroundColor: 'rgba(255,255,255,0.08)', borderColor: 'transparent', duration: 0.3 });
+            gsap.to(cursorDot, { scale: 0, duration: 0.2 });
+        });
+        el.addEventListener('mouseleave', () => {
+            gsap.to(cursor, { scale: 1, backgroundColor: 'transparent', borderColor: 'rgba(255,255,255,0.4)', duration: 0.3 });
+            gsap.to(cursorDot, { scale: 1, duration: 0.2 });
+        });
     });
 }
 

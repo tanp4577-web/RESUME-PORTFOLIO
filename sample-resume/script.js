@@ -2,7 +2,9 @@
 const cursor = document.querySelector('.cursor');
 const cursorDot = document.querySelector('.cursor-dot');
 
-if(cursor && cursorDot) {
+const isDesktop = window.matchMedia("(pointer: fine)").matches;
+
+if(cursor && cursorDot && isDesktop) {
     // GSAP quickTo for 60fps physics tracking
     gsap.set(cursor, {xPercent: -50, yPercent: -50});
     gsap.set(cursorDot, {xPercent: -50, yPercent: -50});

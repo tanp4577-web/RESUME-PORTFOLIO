@@ -1,4 +1,31 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Mobile Hamburger Menu Logic
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinksContainer = document.querySelector('.nav-links');
+    
+    if (menuBtn && navLinksContainer) {
+        menuBtn.addEventListener('click', () => {
+            navLinksContainer.classList.toggle('nav-active');
+            const icon = menuBtn.querySelector('i');
+            if (navLinksContainer.classList.contains('nav-active')) {
+                icon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                icon.classList.replace('fa-times', 'fa-bars');
+            }
+        });
+
+        // Close menu immediately tracking link paths
+        const mobileLinks = navLinksContainer.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 900) {
+                    navLinksContainer.classList.remove('nav-active');
+                    menuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+                }
+            });
+        });
+    }
+
     gsap.registerPlugin(ScrollTrigger);
 
     // Initial Sleek Entrance Animation

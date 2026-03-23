@@ -31,11 +31,6 @@ body {
     position: relative;
 }
 
-/* Custom Cursor Device Handling */
-@media (pointer: fine) {
-    body, a, button, input, textarea, .filter-btn, .clickable { cursor: none !important; }
-}
-
 /* Aurora Background Orbs */
 body::before, body::after {
     content: '';
@@ -64,9 +59,6 @@ body::after {
     0% { transform: translate(0, 0) scale(1); }
     100% { transform: translate(12%, 18%) scale(1.1); }
 }
-
-/* Premium Custom Cursor */
-.cursor { display: none; opacity: 0; width: 44px; height: 44px; background-color: #fff; border-radius: 50%; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 99999; mix-blend-mode: difference; transform-origin: center center; }
 
 h1, h2, h3, h4, .logo { font-family: var(--font-heading); letter-spacing: -0.02em; }
 .gradient-text { background: var(--accent-gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; font-weight: 800; }
@@ -171,16 +163,18 @@ input:focus, textarea:focus { border-color: var(--accent-light) !important; box-
 @media (max-width: 900px) {
     .nav-links { display: none; }
     .hero { flex-direction: column; text-align: left; padding-top: 2vh; gap: 3rem; }
-    .hero-title { font-size: 3.2rem; }
-    .hero-subtitle { font-size: 1.4rem; }
-    .hero-dashboard-wrapper { margin-top: 2rem; }
+    .hero-title { font-size: 2.6rem; }
+    .hero-subtitle { font-size: 1.25rem; font-weight: 600; line-height: 1.4; margin-bottom: 1.5rem; }
+    .hero-dashboard-wrapper { margin-top: 0; }
+    .dashboard-panel { padding: 1.5rem !important; }
+    .dashboard-panel h4 { font-size: 1.6rem !important; }
+    .dashboard-panel .filter-btn { padding: 0.5rem 1rem; font-size: 0.85rem; }
     .contact-container { grid-template-columns: 1fr !important; gap: 3rem !important; }
     .projects-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .card-content { padding: 2rem; }
-    .dashboard-panel { padding: 1.8rem !important; }
+    .card-content { padding: 1.5rem; }
     .hero-cta { flex-direction: column; width: 100%; align-items: stretch; gap: 1rem; }
-    .timeline { padding-left: 1rem; }
-    .timeline-item { padding-left: 2rem; }
+    .timeline { padding-left: 0.5rem; }
+    .timeline-item { padding-left: 1.5rem; margin-bottom: 3.5rem; }
 }
 
 /* Mobile Haptic Touch Feedback (Scale Down on Tap) */

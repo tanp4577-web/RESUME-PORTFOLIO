@@ -83,4 +83,41 @@ document.addEventListener("DOMContentLoaded", () => {
             );
         });
     }
+
+    // Premium 3D Tilt Interactivity (Apple-esque Glass Depth)
+    if (!isMobile) {
+        document.querySelectorAll('.card3d').forEach(card => {
+            const content = card.querySelector('.glass-panel');
+            if(!content) return;
+            
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const rotateX = (((e.clientY - rect.top) - (rect.height / 2)) / (rect.height / 2)) * -4;
+                const rotateY = (((e.clientX - rect.left) - (rect.width / 2)) / (rect.width / 2)) * 4;
+                gsap.to(content, { rotateX, rotateY, duration: 0.4, ease: "power2.out", transformPerspective: 1000 });
+            });
+            card.addEventListener('mouseleave', () => {
+                gsap.to(content, { rotateX: 0, rotateY: 0, duration: 0.7, ease: "elastic.out(1, 0.4)" });
+            });
+        });
+    }
+
+    // ScrollSpy Navbar Sync
+    const sections = document.querySelectorAll('.section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') && link.getAttribute('href').substring(1) === entry.target.id) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }, { rootMargin: '-40% 0px -60% 0px' });
+    sections.forEach(sec => {
+        if(sec.id) observer.observe(sec);
+    });
 });

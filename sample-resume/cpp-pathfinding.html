@@ -128,6 +128,7 @@
         const grid = document.getElementById('algo-grid');
         let cells = [];
         const size = 10;
+        let isRunning = false;
 
         function createGrid() {
             grid.innerHTML = '';
@@ -140,26 +141,44 @@
                 grid.appendChild(cell);
                 cells.push(cell);
             }
-            // Add some walls
+            // Add static walls
             [12, 22, 32, 42, 52, 62, 72, 85, 75, 65, 55, 45].forEach(idx => cells[idx].classList.add('wall'));
         }
 
         async function startSim() {
+            if(isRunning) return;
+            isRunning = true;
+            
+            // Randomly pick an algorithm "path" for variety
+            const useDijkstra = Math.random() > 0.5;
+            const pathAStar = [0, 1, 2, 3, 4, 14, 24, 34, 44, 54, 64, 74, 84, 94, 95, 96, 97, 98, 99];
+            const pathDijkstra = [0, 10, 20, 30, 40, 50, 60, 70, 80, 81, 82, 83, 84, 94, 95, 96, 97, 98, 99];
+            const chosenPath = useDijkstra ? pathDijkstra : pathAStar;
+
+            // Simulate expansion
             for(let i=0; i<cells.length; i++) {
                 if(cells[i].classList.contains('wall') || cells[i].classList.contains('start') || cells[i].classList.contains('end')) continue;
-                await new Promise(r => setTimeout(r, 20));
-                cells[i].classList.add('visited');
-                if(i % 13 === 0) await new Promise(r => setTimeout(r, 40)); // Simulate thinking
+                
+                // Expansion pattern based on algorithm
+                let shouldVisit = useDijkstra ? (i < 90) : (i % 3 === 0 || i > 60);
+                if(shouldVisit) {
+                    await new Promise(r => setTimeout(r, 10));
+                    cells[i].classList.add('visited');
+                }
             }
-            // Draw path
-            const path = [0, 1, 2, 3, 4, 14, 24, 34, 44, 54, 64, 74, 84, 94, 95, 96, 97, 98, 99];
-            for(let idx of path) {
-                await new Promise(r => setTimeout(r, 50));
+
+            // Draw final optimized path
+            for(let idx of chosenPath) {
+                await new Promise(r => setTimeout(r, 40));
                 cells[idx].classList.add('path');
             }
+            isRunning = false;
         }
 
-        function resetSim() { createGrid(); }
+        function resetSim() { 
+            isRunning = false;
+            createGrid(); 
+        }
         createGrid();
     </script>
 </body>

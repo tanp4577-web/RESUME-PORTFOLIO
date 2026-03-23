@@ -1,130 +1,145 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Mobile Hamburger Menu Logic
-    const menuBtn = document.querySelector('.mobile-menu-btn');
-    const navLinksContainer = document.querySelector('.nav-links');
-    
-    if (menuBtn && navLinksContainer) {
-        menuBtn.addEventListener('click', () => {
-            navLinksContainer.classList.toggle('nav-active');
-            const icon = menuBtn.querySelector('i');
-            if (navLinksContainer.classList.contains('nav-active')) {
-                icon.classList.replace('fa-bars', 'fa-times');
-            } else {
-                icon.classList.replace('fa-times', 'fa-bars');
-            }
-        });
+/* 
+    Professional Portfolio Interactivity
+    Engine: GSAP & Custom 3D Matrix Logic
+*/
 
-        // Close menu immediately tracking link paths
-        const mobileLinks = navLinksContainer.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth <= 900) {
-                    navLinksContainer.classList.remove('nav-active');
-                    menuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
-                }
-            });
-        });
-    }
-
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Initialize GSAP ScrollTrigger
     gsap.registerPlugin(ScrollTrigger);
 
-    // Initial Sleek Entrance Animation
-    const tl = gsap.timeline();
-    tl.from('.navbar', { y: -20, opacity: 0, duration: 0.6, ease: 'power2.out' })
-      .from('.hero-content > *', { y: 20, opacity: 0, duration: 0.6, stagger: 0.1, ease: 'power2.out' }, "-=0.3")
-      .from('.hero-3d-wrapper', { opacity: 0, x: 50, rotateY: -30, duration: 1, ease: 'power2.out' }, "-=0.6");
+    // 2. Navigation Logic
+    const navbar = document.querySelector('.navbar');
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
 
-    // Clean Minimalist Scroll Effects For Timeline
-    const timelineItems = gsap.utils.toArray('.timeline-item');
-    timelineItems.forEach((item) => {
-        gsap.fromTo(item, 
-            { opacity: 0, y: 20 },
-            {
-                scrollTrigger: { trigger: item, start: "top 90%", toggleActions: "play none none reverse" },
-                opacity: 1, y: 0, duration: 0.6, ease: 'power2.out'
-            }
-        );
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
     });
 
-    // Clean Minimalist Projects Grid Scroll Effect
-    const projectCards = gsap.utils.toArray('.project-card');
-    projectCards.forEach((card, i) => {
-        gsap.fromTo(card,
-            { opacity: 0, y: 30 },
-            {
-                scrollTrigger: { trigger: card, start: "top 90%", toggleActions: "play none none reverse" },
-                opacity: 1, y: 0, duration: 0.6, ease: 'power2.out'
-            }
-        );
+    mobileMenuBtn?.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
+            '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
     });
 
-    // Enhanced Matrix Dashboard Filtering Logic
+    // 3. 3D Tilt Morphing Logic (The "Professional Edge")
+    const cards = document.querySelectorAll('.card3d');
+    
+    cards.forEach(card => {
+        const content = card.querySelector('.card-content');
+        
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / 10;
+            const rotateY = (centerX - x) / 10;
+            
+            content.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            content.style.transform = `rotateX(0deg) rotateY(0deg)`;
+        });
+    });
+
+    // 4. Hero Dashboard Interactive Matrix
+    const dashPanel = document.querySelector('.dashboard-panel');
+    if (dashPanel) {
+        document.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+            dashPanel.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        });
+    }
+
+    // 5. Skill Bar Progressive Load
+    const skillBars = document.querySelectorAll('.skill-bar-fill');
+    skillBars.forEach(bar => {
+        gsap.to(bar, {
+            width: bar.getAttribute('data-width'),
+            duration: 1.5,
+            ease: "power4.out",
+            scrollTrigger: {
+                trigger: bar,
+                start: "top 90%"
+            }
+        });
+    });
+
+    // 6. Project Matrix Filtering System
     const filterBtns = document.querySelectorAll('.filter-btn');
-    const allProjects = document.querySelectorAll('.project-card');
+    const projectCards = document.querySelectorAll('.project-card');
+    const showAllBtn = document.getElementById('show-all-btn');
 
-    if (filterBtns.length > 0) {
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Update active state
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Update Active State
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
 
-                const filterLang = btn.getAttribute('data-filter');
-                document.querySelector('#projects').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const filter = btn.getAttribute('data-filter');
+            
+            // Filter Animation Logic
+            gsap.to(projectCards, {
+                opacity: 0,
+                scale: 0.8,
+                duration: 0.3,
+                onComplete: () => {
+                    projectCards.forEach(card => {
+                        const langs = card.getAttribute('data-lang');
+                        if (filter === 'all' || langs.includes(filter)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
 
-                allProjects.forEach(project => {
-                    const projectLangs = (project.getAttribute('data-lang') || '').split(' ');
-                    // Always show the massive stock logic card or filter logic
-                    if (filterLang === 'all' || projectLangs.includes(filterLang) || project.classList.contains('highlight-card')) {
-                        project.style.display = 'block';
-                        gsap.to(project, { opacity: 1, scale: 1, rotateY: 0, duration: 0.4 });
+                    gsap.to(projectCards, {
+                        opacity: 1,
+                        scale: 1,
+                        duration: 0.4,
+                        stagger: 0.1
+                    });
+                    
+                    // Toggle Show All visibility
+                    if (filter !== 'all') {
+                        showAllBtn.style.display = 'flex';
                     } else {
-                        gsap.to(project, { opacity: 0, scale: 0.8, duration: 0.4, onComplete: () => {
-                            project.style.display = 'none';
-                            ScrollTrigger.refresh();
-                        }});
+                        showAllBtn.style.display = 'none';
                     }
-                });
+                }
             });
         });
-    }
+    });
 
-    // Animated Skill Dashboard Graphs
-    const skillBars = document.querySelectorAll('.skill-bar-fill');
-    if (skillBars.length > 0) {
-        skillBars.forEach(bar => {
-            const targetWidth = bar.getAttribute('data-width');
-            gsap.fromTo(bar, 
-                { width: "0%" },
-                {
-                    scrollTrigger: {
-                        trigger: bar,
-                        start: "top 85%",
-                    },
-                    width: targetWidth,
-                    duration: 1.5,
-                    ease: "power3.out"
-                }
-            );
-        });
-    }
+    showAllBtn?.addEventListener('click', () => {
+        document.querySelector('.filter-btn[data-filter="all"]').click();
+    });
 
-    // ScrollSpy Navbar Sync
-    const sections = document.querySelectorAll('.section');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') && link.getAttribute('href').substring(1) === entry.target.id) {
-                        link.classList.add('active');
-                    }
-                });
-            }
+    // 7. Global Reveal Logic (Staggered)
+    const reveals = document.querySelectorAll('.section-title, .project-card, .education-block, .contact-info, .feedback-form');
+    
+    reveals.forEach(el => {
+        gsap.from(el, {
+            scrollTrigger: {
+                trigger: el,
+                start: "top 85%",
+                toggleActions: "play none none none"
+            },
+            y: 50,
+            opacity: 0,
+            duration: 0.8,
+            ease: "power2.out"
         });
-    }, { rootMargin: '-40% 0px -60% 0px' });
-    sections.forEach(sec => {
-        if(sec.id) observer.observe(sec);
     });
 });
+

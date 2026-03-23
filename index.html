@@ -4,27 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tanmay Pondhe | Developer Portfolio</title>
-    <!-- Font Awesome -->
+    <title>Tanmay Pondhe | Professional Engineer Portfolio</title>
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Main Style -->
+    <!-- Custom Style -->
     <link rel="stylesheet" href="sample-resume/styles.css">
 </head>
 
 <body>
 
-    <!-- Navigation -->
+    <!-- Section 1: Dynamic Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">TP<span>.</span></a>
+            <a href="#" class="logo">TANMAY<span>.</span></a>
             <div class="nav-links">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#education" class="nav-link">Experience</a>
                 <a href="#projects" class="nav-link">Projects</a>
-                <a href="#education" class="nav-link">Education</a>
-                <a href="#contact" class="nav-link">Contact</a>
-                <a href="sample-resume/Tanmay_Resume.pdf" download="Tanmay_Resume.pdf" class="btn btn-primary">
-                    <i class="fas fa-file-download"></i> Resume
+                <a href="#contact" class="nav-link">Feedback</a>
+                <a href="sample-resume/Tanmay_Resume.pdf" download="Tanmay_Resume.pdf" class="download-btn">
+                    <span>Download CV</span>
+                    <i class="fas fa-file-download"></i>
                 </a>
             </div>
             <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
@@ -32,45 +32,69 @@
     </nav>
 
     <main class="container">
-        <!-- Hero Section -->
-        <section class="hero" id="home">
-            <div class="hero-wrapper">
-                <div class="hero-content">
-                    <span class="hero-tag">Software Engineer & Designer</span>
-                    <h1 class="hero-title">Tanmay Pondhe</h1>
-                    <p class="hero-desc">
-                        I build structured, efficient, and user-centric digital experiences. Currently studying Software Engineering and focusing on full-stack development.
-                    </p>
-                    <div class="hero-btns">
-                        <a href="#projects" class="btn btn-primary">View Projects</a>
-                        <a href="sample-resume/Tanmay_Resume.pdf" download="Tanmay_Resume.pdf" class="btn btn-secondary">Download Resume</a>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="hero-image-placeholder"></div>
+        <!-- Section 2: Aurora Hero & Matrix Status -->
+        <section class="hero" id="home" style="display: flex; align-items: center; gap: 4rem; flex-wrap: wrap;">
+            <div class="hero-content" style="flex: 1.2; min-width: 320px;">
+                <span class="hero-tag">System Architect & Developer</span>
+                <h1 class="hero-title" style="margin-top: 1rem;">Engineering <span class="gradient-text">Productive</span>
+                    Solutions.</h1>
+                <p class="hero-desc" style="margin-bottom: 2.5rem;">Sophomore Software Engineer at VIT Vellore. Scaling
+                    applications with logic, debugging the complex, and designing for the human experience.</p>
+                <div class="hero-btns" style="display: flex; gap: 1.5rem;">
+                    <a href="#projects" class="cta-btn primary-btn">Explore Workspace</a>
+                    <a href="sample-resume/Tanmay_Resume.pdf" download="Tanmay_Resume.pdf" class="cta-btn secondary-btn">Get Resume <i
+                            class="fas fa-download"></i></a>
                 </div>
             </div>
-        </section>
 
-        <!-- About Section -->
-        <section class="section" id="about">
-            <div class="section-header">
-                <h2 class="section-title">About Me</h2>
-            </div>
-            <div class="about-wrapper">
-                <div class="about-visual">
-                    <div class="card" style="height: 300px; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--border);">
-                        <i class="fas fa-user-astronaut"></i>
+            <!-- Professional Dashboard Element -->
+            <div class="hero-dashboard-wrapper"
+                style="flex: 0.8; display: flex; flex-direction: column; justify-content: center; width: 100%;">
+                <div class="glass-panel dashboard-panel"
+                    style="padding: 2.5rem; border-color: rgba(255,255,255,0.15); background: linear-gradient(135deg, #0a0a0c, #111116); box-shadow: 0 15px 40px rgba(0,0,0,0.8);">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 1rem;">
+                        <span
+                            style="font-size: 0.85rem; font-weight: 600; color: #a1a1aa; letter-spacing: 1px; text-transform: uppercase;"><i
+                                class="fas fa-server"></i> Platform Status</span>
+                        <span
+                            style="font-size: 0.8rem; color: #10b981; font-weight: 600; display: flex; align-items: center; gap: 0.6rem;"><span
+                                style="width: 8px; height: 8px; border-radius: 50%; background: #10b981; box-shadow: 0 0 10px #10b981;"></span>
+                            SYSTEM OPERATIONAL</span>
                     </div>
-                </div>
-                <div class="about-content">
-                    <h3>A personal approach to code.</h3>
-                    <p class="about-text">
-                        I'm a detail-oriented Software Engineering student at VIT Vellore. My approach to development is rooted in core engineering principles: efficiency, scalability, and clarity.
-                    </p>
-                    <p class="about-text">
-                        Beyond the IDE, I lead design as the Head of Yuva Marathi Club, where I bridge the gap between technical logic and visual storytelling. I believe the best software isn't just functional—it's intuitive and human-made.
-                    </p>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem;">
+                        <div>
+                            <p
+                                style="font-size: 0.85rem; color: #a1a1aa; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">
+                                Overall Progress</p>
+                            <h4 style="font-size: 2.2rem; font-weight: 700; color: #fff;">96.8<span
+                                    style="font-size: 1.2rem; color: #a1a1aa;">%</span> <span
+                                    style="color: #10b981; font-size: 0.95rem; margin-left: 0.8rem; vertical-align: middle;"><i
+                                        class="fas fa-arrow-up"></i> Stable</span></h4>
+                        </div>
+                        <div>
+                            <p
+                                style="font-size: 0.85rem; color: #a1a1aa; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">
+                                Active Prototypes</p>
+                            <h4 style="font-size: 2.2rem; font-weight: 700; color: #fff;">08<span
+                                    style="color: #60a5fa; font-size: 1rem; margin-left: 0.8rem; vertical-align: middle; font-weight: 500;">Deployed</span>
+                            </h4>
+                        </div>
+                    </div>
+
+                    <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.8rem;">
+                        <p
+                            style="font-size: 0.85rem; color: #a1a1aa; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.2rem;">
+                            <i class="fas fa-filter"></i> Matrix Filters</p>
+                        <div class="filter-dashboard" style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+                            <button class="filter-btn active" data-filter="all">All Projects</button>
+                            <button class="filter-btn" data-filter="c++">C++</button>
+                            <button class="filter-btn" data-filter="python">Python</button>
+                            <button class="filter-btn" data-filter="js">JS/HTML/CSS</button>
+                            <button class="filter-btn" data-filter="ui-ux">UI/UX Layouts</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -394,4 +418,4 @@
     <script src="sample-resume/script.js"></script>
 </body>
 
-</html>
+</html>

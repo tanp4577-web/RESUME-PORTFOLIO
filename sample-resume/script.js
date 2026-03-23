@@ -1,55 +1,85 @@
 // Advanced Liquid Interactivity Cursor
 const cursor = document.querySelector('.cursor');
-const cursorDot = document.querySelector('.cursor-dot');
-
 let isTouchDevice = false;
 window.addEventListener('touchstart', () => { isTouchDevice = true; }, { passive: true });
 
-if(cursor && cursorDot) {
+// Premium GSAP Velocity & Blend-Mode Cursor
+if (cursor) {
     let hasMoved = false;
-        
-    // GSAP quickTo for 60fps physics tracking
-    gsap.set(cursor, {xPercent: -50, yPercent: -50});
-    gsap.set(cursorDot, {xPercent: -50, yPercent: -50});
-
-    let xTo = gsap.quickTo(cursor, "x", {duration: 0.6, ease: "power3"});
-    let yTo = gsap.quickTo(cursor, "y", {duration: 0.6, ease: "power3"});
+    let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+    let pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+    let vel = { x: 0, y: 0 };
     
-    let xToDot = gsap.quickTo(cursorDot, "x", {duration: 0.1, ease: "power3"});
-    let yToDot = gsap.quickTo(cursorDot, "y", {duration: 0.1, ease: "power3"});
-
+    // Initial State
+    gsap.set(cursor, { xPercent: -50, yPercent: -50, scaleX: 0.6, scaleY: 0.6 });
+    
+    // Heavy duty direct CSS manipulators
+    const xSet = gsap.quickSetter(cursor, "x", "px");
+    const ySet = gsap.quickSetter(cursor, "y", "px");
+    const rSet = gsap.quickSetter(cursor, "rotation", "deg");
+    const sxSet = gsap.quickSetter(cursor, "scaleX");
+    const sySet = gsap.quickSetter(cursor, "scaleY");
+    
     window.addEventListener("mousemove", e => {
-        if (isTouchDevice) return; // Prevent simulated mobile 'mousemove' from triggering the cursor
-        
+        if (isTouchDevice) return;
         if (!hasMoved) {
             hasMoved = true;
             cursor.style.display = 'block';
-            cursorDot.style.display = 'block';
-            // Slight delay for CSS opacity transition to trigger
-            setTimeout(() => {
-                cursor.style.opacity = '1';
-                cursorDot.style.opacity = '1';
-            }, 10);
+            gsap.to(cursor, { opacity: 1, duration: 0.4 });
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+            pos.x = mouse.x;
+            pos.y = mouse.y;
         }
-
-        xTo(e.clientX);
-        yTo(e.clientY);
-        xToDot(e.clientX);
-        yToDot(e.clientY);
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
     });
 
-    // Magnetic expansion on interactive elements
-    const interactables = document.querySelectorAll('a, button, input, textarea');
+    // High performance render loop calculating speed vectors
+    gsap.ticker.add(() => {
+        if (!hasMoved || isTouchDevice) return;
+        
+        // Spring easing for position lagging behind mouse coordinates
+        const dt = 1.0 - Math.pow(1.0 - 0.25, gsap.ticker.deltaRatio()); 
+        
+        pos.x += (mouse.x - pos.x) * dt;
+        pos.y += (mouse.y - pos.y) * dt;
+        
+        // Velocity differential
+        vel.x = mouse.x - pos.x;
+        vel.y = mouse.y - pos.y;
+        
+        // Synthesizing squishy stretch deformation based on raw speed
+        const speed = Math.sqrt(vel.x * vel.x + vel.y * vel.y);
+        const stretch = 1 + speed * 0.05; 
+        const squeeze = 1 / stretch; // maintain volume
+        
+        // Direction vector angle
+        const angle = Math.atan2(vel.y, vel.x) * (180 / Math.PI);
+        
+        xSet(pos.x);
+        ySet(pos.y);
+        rSet(angle);
+        
+        // Interupt squishy animations if hovering over elements
+        if (!cursor.classList.contains('is-hovering')) {
+            sxSet(stretch * 0.6); // Base size 0.6
+            sySet(squeeze * 0.6);
+        }
+    });
+
+    // Massive Awwwards style overlay expansion
+    const interactables = document.querySelectorAll('a, button, input, textarea, .filter-btn');
     interactables.forEach(el => {
         el.addEventListener('mouseenter', () => {
             if (isTouchDevice) return;
-            gsap.to(cursor, { scale: 2.2, backgroundColor: 'rgba(255,255,255,0.08)', borderColor: 'transparent', duration: 0.3 });
-            gsap.to(cursorDot, { scale: 0, duration: 0.2 });
+            cursor.classList.add('is-hovering');
+            gsap.to(cursor, { scaleX: 2.8, scaleY: 2.8, duration: 0.4, overwrite: "auto", ease: "back.out(1.5)" });
         });
         el.addEventListener('mouseleave', () => {
             if (isTouchDevice) return;
-            gsap.to(cursor, { scale: 1, backgroundColor: 'transparent', borderColor: 'rgba(255,255,255,0.4)', duration: 0.3 });
-            gsap.to(cursorDot, { scale: 1, duration: 0.2 });
+            cursor.classList.remove('is-hovering');
+            gsap.to(cursor, { scaleX: 0.6, scaleY: 0.6, duration: 0.3, overwrite: "auto" });
         });
     });
 }

@@ -65,9 +65,8 @@ body::after {
     100% { transform: translate(12%, 18%) scale(1.1); }
 }
 
-/* Custom Cursor */
-.cursor { display: none; opacity: 0; width: 36px; height: 36px; border: 1.5px solid rgba(255,255,255,0.4); border-radius: 50%; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999; backdrop-filter: blur(1px); transform-origin: center; transition: background-color 0.3s, border-color 0.3s, opacity 0.2s ease; }
-.cursor-dot { display: none; opacity: 0; width: 6px; height: 6px; background-color: #fff; border-radius: 50%; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 10000; box-shadow: 0 0 10px #fff; transform-origin: center; transition: opacity 0.2s ease; }
+/* Premium Custom Cursor */
+.cursor { display: none; opacity: 0; width: 44px; height: 44px; background-color: #fff; border-radius: 50%; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 99999; mix-blend-mode: difference; transform-origin: center center; }
 
 h1, h2, h3, h4, .logo { font-family: var(--font-heading); letter-spacing: -0.02em; }
 .gradient-text { background: var(--accent-gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; font-weight: 800; }

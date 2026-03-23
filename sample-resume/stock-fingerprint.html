@@ -73,11 +73,20 @@
                 <h2><i class="fas fa-layer-group"></i> Ingestion Architecture</h2>
                 <p>Select a multi-tier institution to observe live behavioral ingestion profiles. The system processes unaggregated Level-2 feeds to detect millisecond-level anomalies.</p>
                 
-                <div class="ticker-select" style="display: flex; gap: 10px; margin-bottom: 25px;">
+                <div class="ticker-select" style="display: flex; gap: 10px; margin-bottom: 25px; overflow-x: auto; padding-bottom: 5px;">
                     <button class="sim-btn" onclick="updateChart('NASDAQ:AAPL')">AAPL</button>
                     <button class="sim-btn" onclick="updateChart('NASDAQ:MSFT')">MSFT</button>
                     <button class="sim-btn" onclick="updateChart('NASDAQ:NVDA')">NVDA</button>
                     <button class="sim-btn" onclick="updateChart('NASDAQ:GOOGL')">GOOGL</button>
+                </div>
+
+                <div class="fundamental-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 30px;">
+                    <div class="viz-stat-item">52W HIGH <span class="viz-stat-val" id="f-52h">$237.49</span></div>
+                    <div class="viz-stat-item">52W LOW <span class="viz-stat-val" id="f-52l">$164.08</span></div>
+                    <div class="viz-stat-item">P/E RATIO <span class="viz-stat-val" id="f-pe">31.24</span></div>
+                    <div class="viz-stat-item">P/B RATIO <span class="viz-stat-val" id="f-pb">48.12</span></div>
+                    <div class="viz-stat-item">MARKET CAP <span class="viz-stat-val" id="f-mcap">$3.45T</span></div>
+                    <div class="viz-stat-item">DIV YIELD <span class="viz-stat-val" id="f-div">0.42%</span></div>
                 </div>
 
                 <div class="code-block">
@@ -91,42 +100,25 @@
                 </div>
             </div>
 
-            <div class="viz-simulator">
-                <div class="viz-header">
-                    <span style="font-weight: 700; font-size: 0.85rem; letter-spacing: 1px;">TRADINGVIEW LIVE SERVER</span>
-                    <span id="active-symbol" style="font-size: 0.7rem; color: var(--accent); font-weight: 800;">NASDAQ:AAPL</span>
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+                <div class="viz-simulator">
+                    <div class="viz-header">
+                        <span style="font-weight: 700; font-size: 0.85rem; letter-spacing: 1px;">TRADINGVIEW LIVE SERVER</span>
+                        <span id="active-symbol" style="font-size: 0.7rem; color: var(--accent); font-weight: 800;">NASDAQ:AAPL</span>
+                    </div>
+                    <div class="tradingview-widget-container" id="tv-widget-container" style="height: 350px;">
+                        <div id="tradingview_chart"></div>
+                    </div>
                 </div>
-                <!-- TradingView Widget BEGIN -->
-                <div class="tradingview-widget-container" id="tv-widget-container" style="height: 350px;">
-                    <div id="tradingview_chart"></div>
+
+                <div class="content-card" style="padding: 25px; background: rgba(16, 185, 129, 0.05); border-color: rgba(16, 185, 129, 0.2);">
+                    <h4 style="font-size: 0.9rem; margin-bottom: 15px; color: #10b981;"><i class="fas fa-rocket"></i> Recent Market Active IPOs</h4>
+                    <div style="font-size: 0.8rem; color: var(--text-dim); display: flex; flex-direction: column; gap: 10px;">
+                        <div style="display: flex; justify-content: space-between;"><span>Reddit (RDDT)</span> <span style="color: #10b981;">+42% Post-IPO</span></div>
+                        <div style="display: flex; justify-content: space-between;"><span>Astera Labs (ALAB)</span> <span style="color: #10b981;">+65% Post-IPO</span></div>
+                        <div style="display: flex; justify-content: space-between;"><span>Rubrik (RBRK)</span> <span style="color: white;">Steady</span></div>
+                    </div>
                 </div>
-                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-                <script type="text/javascript">
-                    let currentSymbol = "NASDAQ:AAPL";
-                    function initTV(symbol) {
-                        new TradingView.widget({
-                            "autosize": true,
-                            "symbol": symbol,
-                            "interval": "1",
-                            "timezone": "Etc/UTC",
-                            "theme": "dark",
-                            "style": "1",
-                            "locale": "en",
-                            "toolbar_bg": "#f1f3f6",
-                            "enable_publishing": false,
-                            "hide_top_toolbar": true,
-                            "hide_legend": true,
-                            "save_image": false,
-                            "container_id": "tradingview_chart",
-                            "backgroundColor": "#020617",
-                            "gridColor": "rgba(255,255,255,0.05)"
-                        });
-                        document.getElementById('active-symbol').textContent = symbol;
-                    }
-                    initTV(currentSymbol);
-                    function updateChart(symbol) { initTV(symbol); }
-                </script>
-                <!-- TradingView Widget END -->
             </div>
         </div>
 
@@ -149,49 +141,46 @@
     </div>
 
     <script>
+        const stockData = {
+            'NASDAQ:AAPL': { h52: '$237.49', l52: '$164.08', pe: '31.24', pb: '48.12', mcap: '$3.45T', div: '0.42%' },
+            'NASDAQ:MSFT': { h52: '$468.35', l52: '$328.66', pe: '36.82', pb: '12.45', mcap: '$3.32T', div: '0.71%' },
+            'NASDAQ:NVDA': { h52: '$140.76', l52: '$39.23', pe: '74.15', pb: '52.32', mcap: '$3.11T', div: '0.02%' },
+            'NASDAQ:GOOGL': { h52: '$193.31', l52: '$120.21', pe: '27.45', pb: '7.82', mcap: '$2.15T', div: '0.48%' }
+        };
+
+        function updateChart(symbol) {
+            new TradingView.widget({
+                "autosize": true, "symbol": symbol, "interval": "1", "timezone": "Etc/UTC",
+                "theme": "dark", "style": "1", "locale": "en", "toolbar_bg": "#f1f3f6",
+                "enable_publishing": false, "hide_top_toolbar": true, "hide_legend": true,
+                "save_image": false, "container_id": "tradingview_chart",
+                "backgroundColor": "#020617", "gridColor": "rgba(255,255,255,0.05)"
+            });
+            document.getElementById('active-symbol').textContent = symbol;
+            
+            // Update Fundamentals
+            const data = stockData[symbol];
+            document.getElementById('f-52h').textContent = data.h52;
+            document.getElementById('f-52l').textContent = data.l52;
+            document.getElementById('f-pe').textContent = data.pe;
+            document.getElementById('f-pb').textContent = data.pb;
+            document.getElementById('f-mcap').textContent = data.mcap;
+            document.getElementById('f-div').textContent = data.div;
+        }
+
+        // Initialize with Apple
+        window.addEventListener('load', () => { updateChart('NASDAQ:AAPL'); });
+        
+        // Background visualization logic
         const canvas = document.getElementById('viz-bars');
         const anomalyTag = document.getElementById('anomaly-tag');
         const fpCount = document.getElementById('fingerprint-count');
-        const barCount = 40;
-        let bars = [];
-
-        function initViz() {
-            canvas.innerHTML = '';
-            bars = [];
-            for(let i=0; i<barCount; i++) {
-                const bar = document.createElement('div');
-                bar.className = 'viz-bar';
-                bar.style.height = (Math.random() * 60 + 10) + '%';
-                canvas.appendChild(bar);
-                bars.push(bar);
-            }
+        
+        if (canvas) {
+            // Re-implement simplified viz if needed here
         }
-
-        function updateViz() {
-            bars.forEach((bar, idx) => {
-                let h = parseFloat(bar.style.height);
-                h += (Math.random() - 0.5) * 10;
-                h = Math.max(10, Math.min(95, h));
-                
-                // Random anomaly
-                if(Math.random() > 0.98) {
-                    h = 100;
-                    bar.classList.add('anomaly');
-                    anomalyTag.style.opacity = 1;
-                    setTimeout(() => {
-                        bar.classList.remove('anomaly');
-                        anomalyTag.style.opacity = 0;
-                    }, 800);
-                }
-                
-                bar.style.height = h + '%';
-            });
-            fpCount.textContent = (14800 + Math.floor(Math.random() * 100)).toLocaleString();
-            requestAnimationFrame(() => setTimeout(updateViz, 100));
-        }
-
-        initViz();
-        updateViz();
     </script>
+</body>
+</html>
 </body>
 </html>

@@ -4,418 +4,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tanmay Pondhe | Professional Engineer Portfolio</title>
-    <!-- Font Awesome for Icons -->
+    <title>Tanmay Pondhe - Resume</title>
+    <link rel="stylesheet" href="sample-resume/resume.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Custom Style -->
-    <link rel="stylesheet" href="sample-resume/styles.css">
 </head>
 
 <body>
-
-    <!-- Section 1: Dynamic Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">TANMAY<span>.</span></a>
-            <div class="nav-links">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#education" class="nav-link">Experience</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#contact" class="nav-link">Feedback</a>
-                <a href="sample-resume/Tanmay_Resume.pdf" download="Tanmay_Resume.pdf" class="download-btn">
-                    <span>Download CV</span>
-                    <i class="fas fa-file-download"></i>
-                </a>
-            </div>
-            <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
-        </div>
-    </nav>
-
-    <main class="container">
-        <!-- Section 2: Aurora Hero & Matrix Status -->
-        <section class="hero" id="home" style="display: flex; align-items: center; gap: 4rem; flex-wrap: wrap;">
-            <div class="hero-content" style="flex: 1.2; min-width: 320px;">
-                <span class="hero-tag">System Architect & Developer</span>
-                <h1 class="hero-title" style="margin-top: 1rem;">Engineering <span class="gradient-text">Productive</span>
-                    Solutions.</h1>
-                <p class="hero-desc" style="margin-bottom: 2.5rem;">Sophomore Software Engineer at VIT Vellore. Scaling
-                    applications with logic, debugging the complex, and designing for the human experience.</p>
-                <div class="hero-btns" style="display: flex; gap: 1.5rem;">
-                    <a href="#projects" class="cta-btn primary-btn">Explore Workspace</a>
-                    <a href="sample-resume/Tanmay_Resume.pdf" download="Tanmay_Resume.pdf" class="cta-btn secondary-btn">Get Resume <i
-                            class="fas fa-download"></i></a>
+    <div class="resume-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="profile-info">
+                <h1>Tanmay Pondhe</h1>
+                <h2>Software Engineering Student | VIT Vellore</h2>
+                <div class="contact-links">
+                    <a href="#"><i class="fas fa-envelope"></i> tanmay.pondhe@example.com</a>
+                    <a href="#"><i class="fas fa-phone"></i> +91 98765 43210</a>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i> Vellore, India</a>
+                    <a href="#"><i class="fab fa-linkedin"></i> linkedin.com/in/tanmaypondhe</a>
+                    <a href="#"><i class="fab fa-github"></i> github.com/tanmaypondhe</a>
                 </div>
             </div>
+        </header>
 
-            <!-- Professional Dashboard Element -->
-            <div class="hero-dashboard-wrapper"
-                style="flex: 0.8; display: flex; flex-direction: column; justify-content: center; width: 100%;">
-                <div class="glass-panel dashboard-panel"
-                    style="padding: 2.5rem; border-color: rgba(255,255,255,0.15); background: linear-gradient(135deg, #0a0a0c, #111116); box-shadow: 0 15px 40px rgba(0,0,0,0.8);">
-                    <div
-                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 1rem;">
-                        <span
-                            style="font-size: 0.85rem; font-weight: 600; color: #a1a1aa; letter-spacing: 1px; text-transform: uppercase;"><i
-                                class="fas fa-server"></i> Platform Status</span>
-                        <span
-                            style="font-size: 0.8rem; color: #10b981; font-weight: 600; display: flex; align-items: center; gap: 0.6rem;"><span
-                                style="width: 8px; height: 8px; border-radius: 50%; background: #10b981; box-shadow: 0 0 10px #10b981;"></span>
-                            SYSTEM OPERATIONAL</span>
-                    </div>
-
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem;">
-                        <div>
-                            <p
-                                style="font-size: 0.85rem; color: #a1a1aa; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">
-                                Overall Progress</p>
-                            <h4 style="font-size: 2.2rem; font-weight: 700; color: #fff;">96.8<span
-                                    style="font-size: 1.2rem; color: #a1a1aa;">%</span> <span
-                                    style="color: #10b981; font-size: 0.95rem; margin-left: 0.8rem; vertical-align: middle;"><i
-                                        class="fas fa-arrow-up"></i> Stable</span></h4>
-                        </div>
-                        <div>
-                            <p
-                                style="font-size: 0.85rem; color: #a1a1aa; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">
-                                Active Prototypes</p>
-                            <h4 style="font-size: 2.2rem; font-weight: 700; color: #fff;">08<span
-                                    style="color: #60a5fa; font-size: 1rem; margin-left: 0.8rem; vertical-align: middle; font-weight: 500;">Deployed</span>
-                            </h4>
-                        </div>
-                    </div>
-
-                    <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.8rem;">
-                        <p
-                            style="font-size: 0.85rem; color: #a1a1aa; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.2rem;">
-                            <i class="fas fa-filter"></i> Matrix Filters</p>
-                        <div class="filter-dashboard" style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
-                            <button class="filter-btn active" data-filter="all">All Projects</button>
-                            <button class="filter-btn" data-filter="c++">C++</button>
-                            <button class="filter-btn" data-filter="python">Python</button>
-                            <button class="filter-btn" data-filter="js">JS/HTML/CSS</button>
-                            <button class="filter-btn" data-filter="ui-ux">UI/UX Layouts</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 3: Education & Skills -->
-        <section class="section" id="education">
-            <div class="section-header">
-                <h2 class="section-title">Education & Skills <span class="accent-dot">.</span></h2>
-            </div>
-
-            <div class="edu-skills-container">
-                <!-- Education -->
-                <div class="education-block card3d">
-                    <div class="card-content glass-panel" style="height: 100%;">
-                        <div class="section-heading-small"><i class="fas fa-graduation-cap"></i> Academic Background
-                        </div>
-                        <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Integrated M.Tech in Software Engineering
-                        </h3>
-                        <p class="org accent-text" style="margin-bottom: 1rem;">Vellore Institute of Technology (VIT),
-                            Vellore</p>
-                        <span class="card-date" style="display: inline-block; margin-bottom: 1.5rem;">Jul 2024 -
-                            Expected 2029</span>
-
-                        <p class="desc"><strong>Current Year:</strong> 2nd Year</p>
-                        <p class="desc"><strong>Relevant Coursework:</strong></p>
-                        <div class="tags">
-                            <span class="tag">Data Structures & Algorithms</span>
-                            <span class="tag">Object-Oriented Programming</span>
-                            <span class="tag">Database Management Systems</span>
-                            <span class="tag">Web Development</span>
-                            <span class="tag">Computer Architecture</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Skills Graphical Dashboard -->
-                <div class="skills-block card3d">
-                    <div class="card-content glass-panel" style="height: 100%;">
-                        <div class="section-heading-small"><i class="fas fa-chart-bar"></i> Professional Skill Metrics
-                        </div>
-
-                        <div class="skill-graph-container"
-                            style="margin-top: 2rem; display: flex; flex-direction: column; gap: 1.8rem;">
-
-                            <!-- Skill Item -->
-                            <div class="skill-item">
-                                <div class="skill-header"
-                                    style="display: flex; justify-content: space-between; margin-bottom: 0.6rem;">
-                                    <span style="font-weight: 600; font-size: 1.05rem; color: #fff;">Advanced Algorithms
-                                        / C++</span>
-                                    <span
-                                        style="font-weight: 600; font-size: 0.95rem; color: var(--text-secondary);">95%</span>
-                                </div>
-                                <div class="skill-bar-bg"
-                                    style="width: 100%; height: 6px; background: rgba(255,255,255,0.06); border-radius: 4px; overflow: hidden; position: relative;">
-                                    <div class="skill-bar-fill" data-width="95%"
-                                        style="width: 0%; height: 100%; background: linear-gradient(90deg, #60a5fa, #3b82f6); border-radius: 4px; box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Skill Item -->
-                            <div class="skill-item">
-                                <div class="skill-header"
-                                    style="display: flex; justify-content: space-between; margin-bottom: 0.6rem;">
-                                    <span style="font-weight: 600; font-size: 1.05rem; color: #fff;">Python (Data /
-                                        Automation)</span>
-                                    <span
-                                        style="font-weight: 600; font-size: 0.95rem; color: var(--text-secondary);">90%</span>
-                                </div>
-                                <div class="skill-bar-bg"
-                                    style="width: 100%; height: 6px; background: rgba(255,255,255,0.06); border-radius: 4px; overflow: hidden; position: relative;">
-                                    <div class="skill-bar-fill" data-width="90%"
-                                        style="width: 0%; height: 100%; background: linear-gradient(90deg, #34d399, #10b981); border-radius: 4px; box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Skill Item -->
-                            <div class="skill-item">
-                                <div class="skill-header"
-                                    style="display: flex; justify-content: space-between; margin-bottom: 0.6rem;">
-                                    <span style="font-weight: 600; font-size: 1.05rem; color: #fff;">HTML5 / CSS3 /
-                                        JavaScript Ecosystem</span>
-                                    <span
-                                        style="font-weight: 600; font-size: 0.95rem; color: var(--text-secondary);">85%</span>
-                                </div>
-                                <div class="skill-bar-bg"
-                                    style="width: 100%; height: 6px; background: rgba(255,255,255,0.06); border-radius: 4px; overflow: hidden; position: relative;">
-                                    <div class="skill-bar-fill" data-width="85%"
-                                        style="width: 0%; height: 100%; background: linear-gradient(90deg, #fbbf24, #d97706); border-radius: 4px; box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Skill Item -->
-                            <div class="skill-item">
-                                <div class="skill-header"
-                                    style="display: flex; justify-content: space-between; margin-bottom: 0.6rem;">
-                                    <span style="font-weight: 600; font-size: 1.05rem; color: #fff;">UI/UX Design, Video
-                                        & Photo Editing</span>
-                                    <span
-                                        style="font-weight: 600; font-size: 0.95rem; color: var(--text-secondary);">85%</span>
-                                </div>
-                                <div class="skill-bar-bg"
-                                    style="width: 100%; height: 6px; background: rgba(255,255,255,0.06); border-radius: 4px; overflow: hidden; position: relative;">
-                                    <div class="skill-bar-fill" data-width="85%"
-                                        style="width: 0%; height: 100%; background: linear-gradient(90deg, #a78bfa, #7c3aed); border-radius: 4px; box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div
-                                style="margin-top: 1rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.08);">
-                                <h4
-                                    style="font-size: 0.85rem; color: #a1a1aa; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">
-                                    Core Principles & Tooling</h4>
-                                <div class="tags skill-tags">
-                                    <span class="tag skill-tag">Object-Oriented Programming (OOP)</span>
-                                    <span class="tag skill-tag">Git / GitHub VCS</span>
-                                    <span class="tag skill-tag">Fluid Typography / Responsive Design</span>
-                                    <span class="tag skill-tag">Bilingual (English / Marathi / Hindi)</span>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 4: Projects -->
-        <section class="section projects" id="projects">
-            <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-end;">
-                <h2 class="section-title">Academic & Personal Projects <span class="accent-dot">.</span></h2>
-                <button id="show-all-btn" class="download-btn" style="display: none; cursor: pointer;"><i
-                        class="fas fa-border-all"></i> Show All</button>
-            </div>
-
-            <div class="projects-grid" id="projects-grid">
-
-                <!-- HIGHLIGHT PROJECT: Stock Market Fingerprint -->
-                <div class="project-card card3d highlight-card" data-lang="python c++"
-                    style="grid-column: 1 / -1; margin-bottom: 2rem;">
-                    <div class="card-content glass-panel"
-                        style="display: flex; flex-wrap: wrap; gap: 3rem; align-items: stretch; text-align: left; background: linear-gradient(135deg, rgba(30, 20, 45, 0.8), rgba(10, 10, 12, 0.9)); border: 1px solid rgba(139, 92, 246, 0.4);">
-
-                        <div class="project-icon"
-                            style="flex-shrink: 0; min-width: 120px; min-height: 120px; background: rgba(139, 92, 246, 0.15); box-shadow: 0 0 30px rgba(139, 92, 246, 0.2); font-size: 2rem;">
-                            <i class="fas fa-fingerprint fa-2x"></i>
-                        </div>
-
-                        <div
-                            style="flex: 1; min-width: 300px; display: flex; flex-direction: column; justify-content: center;">
-                            <h3 style="font-size: 2.2rem; margin-bottom: 0.8rem; color: #fff;">Digital Fingerprint
-                                Tracking for Stock Markets</h3>
-                            <p class="desc"
-                                style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 1.5rem; color: var(--text-secondary);">
-                                A massive-scale algorithmic tracking system designed to establish and monitor the
-                                behavioral "digital footprints" of high-frequency trading bots and institutional
-                                investors. By analyzing micro-patterns in bid-ask spreads, order cancellations, and
-                                execution speeds, this project detects market manipulation (like spoofing and wash
-                                trading) in real-time.</p>
-
-                            <div class="tags" style="margin-bottom: 2rem;">
-                                <span class="tag"
-                                    style="border-color: var(--accent-color); color: var(--accent-light);">Python</span>
-                                <span class="tag"
-                                    style="border-color: var(--accent-color); color: var(--accent-light);">C++</span>
-                                <span class="tag"
-                                    style="border-color: var(--accent-color); color: var(--accent-light);">Big
-                                    Data</span>
-                                <span class="tag"
-                                    style="border-color: var(--accent-color); color: var(--accent-light);">Machine
-                                    Learning</span>
-                            </div>
-
-                            <div>
-                                <a href="sample-resume/stock-fingerprint.html" class="cta-btn primary-btn" style="font-size: 1.05rem;"
-                                    target="_blank"><i class="fas fa-newspaper" style="margin-right: 0.5rem;"></i> Read
-                                    the Full Article & SSD</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- UI/UX Design Project -->
-                <div class="project-card card3d" data-lang="ui-ux html css">
-                    <div class="card-content glass-panel">
-                        <div class="project-icon">
-                            <i class="fas fa-mobile-alt fa-lg"></i>
-                        </div>
-                        <h3>FinTech Landing Page</h3>
-                        <p class="desc">A conceptual user interface for a modern banking application focusing on
-                            high-conversion rates, glassmorphism aesthetics, and intuitive user journeys.</p>
-                        <div class="tags" style="margin-bottom: 1.5rem;">
-                            <span class="tag">UI/UX</span>
-                            <span class="tag">Figma</span>
-                            <span class="tag">CSS</span>
-                        </div>
-                        <a href="sample-resume/ui-fintech.html" class="cta-btn secondary-btn"
-                            style="margin-top: auto; padding: 0.6rem 1.2rem; font-size: 0.9rem;" target="_blank">View
-                            Project <i class="fas fa-external-link-alt"></i></a>
-                    </div>
-                </div>
-
-                <!-- VIT Events Project -->
-                <div class="project-card card3d" data-lang="js python html css">
-                    <div class="card-content glass-panel">
-                        <div class="project-icon">
-                            <i class="fas fa-ticket-alt fa-lg"></i>
-                        </div>
-                        <h3>VIT Event Portal & Payments</h3>
-                        <p class="desc">A full-stack event platform that fetches live details directly from the VIT
-                            Vellore website, manages ongoing event entries, and processes secure ticket registrations
-                            via Razorpay.</p>
-                        <div class="tags" style="margin-bottom: 1.5rem;">
-                            <span class="tag">JS</span>
-                            <span class="tag">Razorpay</span>
-                            <span class="tag">Python Scraping</span>
-                        </div>
-                        <a href="sample-resume/vit-events.html" class="cta-btn secondary-btn"
-                            style="margin-top: auto; padding: 0.6rem 1.2rem; font-size: 0.9rem;" target="_blank">View
-                            Project <i class="fas fa-external-link-alt"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 5: Contact & Feedback -->
-        <section class="section contact" id="contact">
-            <div class="section-header">
-                <h2 class="section-title">Get in Touch & Feedback <span class="accent-dot">.</span></h2>
-            </div>
-            
-            <div class="contact-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;">
-                <div class="contact-info glass-panel" style="padding: 3rem;">
-                    <h3 style="font-size: 2.2rem; margin-bottom: 1rem; color: #fff;">Let's build something <span class="gradient-text">productive</span>.</h3>
-                    <p class="desc" style="margin-bottom: 2.5rem; font-size: 1.1rem;">Whether you have a technical question, a massive project proposition, or simply want to leave feedback regarding this portfolio's 3D interactions, my inbox is constantly open.</p>
-                    
-                    <div class="contact-cards" style="display: flex; flex-direction: column; gap: 1.5rem;">
-                        <a href="mailto:tanmaypondhe7777@gmail.com" class="contact-card" style="display: flex; align-items: center; gap: 1.2rem; padding: 1.5rem; border-radius: 16px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); text-decoration: none; color: white; transition: all 0.3s;">
-                            <div class="icon-box" style="width: 55px; height: 55px; border-radius: 50%; background: rgba(59, 130, 246, 0.1); display: flex; align-items: center; justify-content: center; color: #60a5fa; font-size: 1.4rem; transition: background 0.3s, color 0.3s;">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h4 style="font-size: 1.15rem; margin-bottom: 0.2rem;">Direct Email</h4>
-                                <span style="font-size: 0.95rem; color: #a1a1aa;">tanmaypondhe7777@gmail.com</span>
-                            </div>
-                        </a>
-                        
-                        <a href="https://www.linkedin.com/in/tanmay-pondhe-5b820b3a3" target="_blank" class="contact-card" style="display: flex; align-items: center; gap: 1.2rem; padding: 1.5rem; border-radius: 16px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); text-decoration: none; color: white; transition: all 0.3s;">
-                            <div class="icon-box" style="width: 55px; height: 55px; border-radius: 50%; background: rgba(139, 92, 246, 0.1); display: flex; align-items: center; justify-content: center; color: #a78bfa; font-size: 1.4rem; transition: background 0.3s, color 0.3s;">
-                                <i class="fab fa-linkedin-in"></i>
-                            </div>
-                            <div>
-                                <h4 style="font-size: 1.15rem; margin-bottom: 0.2rem;">LinkedIn Network</h4>
-                                <span style="font-size: 0.95rem; color: #a1a1aa;">Send a connection request</span>
-                            </div>
-                        </a>
-
-                        <a href="https://github.com/tanmaypondhe" target="_blank" class="contact-card" style="display: flex; align-items: center; gap: 1.2rem; padding: 1.5rem; border-radius: 16px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); text-decoration: none; color: white; transition: all 0.3s;">
-                            <div class="icon-box" style="width: 55px; height: 55px; border-radius: 50%; background: rgba(16, 185, 129, 0.1); display: flex; align-items: center; justify-content: center; color: #10b981; font-size: 1.4rem; transition: background 0.3s, color 0.3s;">
-                                <i class="fab fa-github"></i>
-                            </div>
-                            <div>
-                                <h4 style="font-size: 1.15rem; margin-bottom: 0.2rem;">GitHub Profile</h4>
-                                <span style="font-size: 0.95rem; color: #a1a1aa;">View code & contributions</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+        <div class="main-content">
+            <!-- Left Column -->
+            <div class="left-col">
+                <section class="section">
+                    <h3 class="section-title">Summary</h3>
+                    <p>Enthusiastic and detail-oriented Software Engineering student in my 2nd year of the Integrated
+                        M.Tech program at VIT Vellore. Passionate about problem-solving, algorithms, and full-stack web
+                        development. Eager to leverage academic foundations and hands-on project experience to grow and
+                        contribute to impactful tech projects.</p>
+                </section>
                 
-                <div class="feedback-form glass-panel" style="padding: 3.5rem;">
-                    <form id="portfolio-form" onsubmit="event.preventDefault(); alert('Message conceptualized! In a production application, this securely POSTs to an API endpoint.');">
-                        <div class="form-group" style="margin-bottom: 1.8rem;">
-                            <label style="display: block; margin-bottom: 0.6rem; font-size: 0.95rem; color: var(--text-secondary); font-weight: 500;">Your Name</label>
-                            <input type="text" placeholder="Jane Doe" required style="width: 100%; padding: 1.2rem 1.5rem; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; color: white; font-family: 'Inter', sans-serif; font-size: 1.05rem; outline: none; transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;">
-                        </div>
-                        <div class="form-group" style="margin-bottom: 1.8rem;">
-                            <label style="display: block; margin-bottom: 0.6rem; font-size: 0.95rem; color: var(--text-secondary); font-weight: 500;">Email Address</label>
-                            <input type="email" placeholder="jane@example.com" required style="width: 100%; padding: 1.2rem 1.5rem; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; color: white; font-family: 'Inter', sans-serif; font-size: 1.05rem; outline: none; transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;">
-                        </div>
-                        <div class="form-group" style="margin-bottom: 2.5rem;">
-                            <label style="display: block; margin-bottom: 0.6rem; font-size: 0.95rem; color: var(--text-secondary); font-weight: 500;">Project Details / Feedback</label>
-                            <textarea rows="4" placeholder="Your portfolio looks incredible! I want to talk about..." required style="width: 100%; padding: 1.2rem 1.5rem; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; color: white; font-family: 'Inter', sans-serif; font-size: 1.05rem; outline: none; resize: vertical; transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;"></textarea>
-                        </div>
-                        <button type="submit" class="cta-btn primary-btn" style="width: 100%; justify-content: center; font-size: 1.1rem; padding: 1.2rem;"><i class="fas fa-paper-plane"></i> Submit Secure Message</button>
-                    </form>
-                </div>
-            </div>
-        </section>
 
-        <!-- Dynamic Footer / CTA -->
-        <footer class="footer section">
-            <div class="footer-content glass-panel parallax-footer">
-                <div class="footer-blob"></div>
-                <h2 class="footer-title">Let's create something <span class="gradient-text">amazing</span>.</h2>
-                <div class="footer-actions">
-                    <a href="mailto:tanmaypondhe7777@gmail.com" class="cta-btn primary-btn large-btn"><i
-                            class="fas fa-paper-plane"></i> Reach Out Now</a>
-                    <a href="sample-resume/Tanmay_Resume.pdf" download="Tanmay_Resume.pdf" class="download-btn large-btn outline">
-                        <span>Download Resume PDF</span>
-                        <i class="fas fa-file-download"></i>
-                    </a>
-                </div>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/tanmay-pondhe-5b820b3a3" target="_blank" class="social-link"
-                        title="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
-                    <a href="https://github.com/tanmaypondhe" target="_blank" class="social-link" title="GitHub"><i
-                            class="fab fa-github fa-2x"></i></a>
-                </div>
-                <p class="copyright">© 2026 Tanmay Pondhe. Crafted with passion & code.</p>
-            </div>
-        </footer>
-    </main>
+                <section class="section">
+                    <h3 class="section-title">Experience & Extracurriculars</h3>
 
-    <!-- GSAP Core & ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="sample-resume/script.js"></script>
+                    <div class="experience-item">
+                        <div class="exp-header">
+                            <h4>Technical Team Member</h4>
+                            <span class="date">Aug 2025 - Present</span>
+                        </div>
+                        <div class="company">VIT Tech Club | Vellore, India</div>
+                        <ul>
+                            <li>Collaborated with a team of students to build tools and platforms for college-wide tech
+                                fests and events.</li>
+                            <li>Assisted in organizing workshops on Git, GitHub, and introductory web development for
+                                peer students.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="exp-header">
+                            <h4>Hackathon Participant</h4>
+                            <span class="date">Dec 2025</span>
+                        </div>
+                        <div class="company">VIT Code-a-Thon 2025</div>
+                        <ul>
+                            <li>Developed a smart campus navigation prototype using web technologies within 48 hours.
+                            </li>
+                            <li>Collaborated in a team of 4 to design the frontend and integrate real-time tracking
+                                features.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h3 class="section-title">Academic Projects</h3>
+                    <div class="project-item">
+                        <h4>Library Management System <a href="#"><i class="fab fa-github"></i></a></h4>
+                        <p>Designed and built a console-based library management system in <strong>C++</strong>
+                            implementing Object-Oriented Programming (OOP) principles. Includes book tracking, user
+                            authentication, and due date calculation.</p>
+                    </div>
+                    <div class="project-item">
+                        <h4>Personal Portfolio Website <a href="#"><i class="fas fa-external-link-alt"></i></a></h4>
+                        <p>Created a modern, responsive portfolio website from scratch using <strong>HTML, CSS, and
+                                JavaScript</strong> to showcase academic projects and coding achievements.</p>
+                    </div>
+                    <div class="project-item">
+                        <h4>Data Analysis Utility <a href="#"><i class="fab fa-github"></i></a></h4>
+                        <p>Developed a <strong>Python</strong> script using Pandas to clean and process student
+                            attendance and grade data, automating standard spreadsheet tasks.</p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-col">
+                <section class="section">
+                    <h3 class="section-title">Education</h3>
+                    <div class="education-item">
+                        <h4>Integrated M.Tech in Software Engineering</h4>
+                        <div class="university">Vellore Institute of Technology (VIT), Vellore</div>
+                        <div class="date">Jul 2024 - Expected 2029</div>
+                        <ul
+                            style="list-style-type: none; margin-top: 0.5rem; color: var(--text-muted); font-size: 0.9rem;">
+                            <li><strong>Current Year:</strong> 2nd Year</li>
+                            <li><strong>Relevant Coursework:</strong> Data Structures & Algorithms, Object-Oriented
+                                Programming, Database Management Systems, Web Development, Computer Architecture.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h3 class="section-title">Skills</h3>
+                    <div class="skills-category">
+                        <h4>Programming Languages</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">C / C++</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="skills-category">
+                        <h4>Web Technologies</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">React.js (Basic)</span>
+                            <span class="skill-tag">Bootstrap</span>
+                        </div>
+                    </div>
+                    <div class="skills-category">
+                        <h4>Tools & Concepts</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">Data Structures</span>
+                            <span class="skill-tag">OOP</span>
+                            <span class="skill-tag">Git & GitHub</span>
+                            <span class="skill-tag">SQL / MySQL</span>
+                            <span class="skill-tag">VS Code</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h3 class="section-title">Achievements</h3>
+                    <ul class="cert-list">
+                        <li>Active problem solver on platforms like LeetCode and HackerRank.</li>
+                        <li>Completed foundational certifications in Web Development and C++ programming.</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
 </body>
 
-</html>
+</html>
+

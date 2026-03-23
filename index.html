@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SonicStream - Premium Music</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar glass">
+            <div class="logo">
+                <i data-lucide="music" class="accent-icon"></i>
+                <span>SonicStream</span>
+            </div>
+            <nav class="side-nav">
+                <a href="#" class="nav-item active"><i data-lucide="home"></i> Home</a>
+                <a href="#" class="nav-item"><i data-lucide="search"></i> Search</a>
+                <a href="#" class="nav-item"><i data-lucide="library"></i> Library</a>
+            </nav>
+            <div class="playlists">
+                <p class="section-label">Playlists</p>
+                <div class="playlist-list">
+                    <a href="#" class="playlist-item">Liked Songs</a>
+                    <a href="#" class="playlist-item">Daily Mix 1</a>
+                    <a href="#" class="playlist-item">Top Charts</a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header glass">
+                <div class="search-bar">
+                    <i data-lucide="search"></i>
+                    <input type="text" placeholder="Search for tracks, artists..." id="trackSearch">
+                </div>
+                <div class="user-profile">
+                    <div class="avatar">U</div>
+                </div>
+            </header>
+
+            <section class="content-scroll">
+                <div class="hero bh-hero">
+                    <div class="hero-content">
+                        <span class="badge">Featured</span>
+                        <h1 id="hero-title">Trending Now</h1>
+                        <p id="hero-subtitle">The hottest tracks on SonicStream</p>
+                        <button class="btn btn-primary" id="playHero"><i data-lucide="play"></i> Play All</button>
+                    </div>
+                </div>
+
+                <div class="grid-section">
+                    <div class="section-header">
+                        <h2>Top Hits</h2>
+                        <a href="#" class="see-all">See All</a>
+                    </div>
+                    <div class="track-grid" id="trackGrid">
+                        <!-- Tracks will be injected here -->
+                        <div class="skeleton-card"></div>
+                        <div class="skeleton-card"></div>
+                        <div class="skeleton-card"></div>
+                        <div class="skeleton-card"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Player Bar -->
+        <footer class="player-bar glass">
+            <div class="current-track">
+                <div class="track-img-container">
+                    <img src="" alt="" id="playerTrackImg" class="hidden">
+                    <div class="img-placeholder"><i data-lucide="music"></i></div>
+                </div>
+                <div class="track-info">
+                    <p class="track-name" id="playerTrackName">Select a track</p>
+                    <p class="artist-name" id="playerArtistName">Artist</p>
+                </div>
+                <button class="favorite-btn"><i data-lucide="heart"></i></button>
+            </div>
+
+            <div class="player-controls">
+                <div class="control-btns">
+                    <button id="shuffleBtn"><i data-lucide="shuffle"></i></button>
+                    <button id="prevBtn"><i data-lucide="skip-back"></i></button>
+                    <button id="playPauseBtn" class="play-main"><i data-lucide="play"></i></button>
+                    <button id="nextBtn"><i data-lucide="skip-forward"></i></button>
+                    <button id="repeatBtn"><i data-lucide="repeat"></i></button>
+                </div>
+                <div class="progress-bar-container">
+                    <span class="time-current" id="currentTime">0:00</span>
+                    <div class="progress-bar" id="progressBar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <span class="time-total" id="durationTime">0:00</span>
+                </div>
+            </div>
+
+            <div class="volume-controls">
+                <i data-lucide="list-music"></i>
+                <i data-lucide="volume-2" id="volumeIcon"></i>
+                <div class="volume-slider" id="volumeSlider">
+                    <div class="volume-fill" id="volumeFill" style="width: 70%;"></div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

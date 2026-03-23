@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market Algorithms: The Rise of Digital Fingerprinting | Tech Insights</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .article-body p {
+            font-family: 'Merriweather', serif;
+            font-size: 1.15rem;
+            line-height: 2;
+            color: #d1d5db;
+            margin-bottom: 1.8rem;
+        }
+        .article-body h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.8rem;
+            color: #fff;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 0.5rem;
+        }
+        .drop-cap:first-letter {
+            float: left;
+            font-size: 4.5rem;
+            line-height: 0.8;
+            padding-top: 4px;
+            padding-right: 12px;
+            padding-left: 0;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            color: #fff;
+        }
+        .byline {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-secondary);
+            font-family: 'Inter', sans-serif;
+        }
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #000;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body style="padding-top: 5vh; background-color: #050505;">
+    <div class="container" style="max-width: 850px; margin: 0 auto; text-align: left; padding: 2rem 5%;">
+        
+        <a href="index.html" class="cta-btn secondary-btn" style="margin-bottom: 3rem; font-family: 'Inter', sans-serif;"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+        
+        <header style="margin-bottom: 2rem;">
+            <p style="color: var(--text-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem; font-family: 'Inter', sans-serif; font-size: 0.85rem;"><i class="fas fa-layer-group"></i> Financial Technology Exclusive</p>
+            <h1 style="font-size: 3.5rem; margin-bottom: 1.5rem; line-height: 1.15; font-family: 'Inter', sans-serif; font-weight: 700; color: #fff; letter-spacing: -0.03em;">Exposing Market Manipulation: The Rise of Digital Fingerprinting in HFT</h1>
+            <p style="font-size: 1.25rem; color: #9ca3af; font-family: 'Inter', sans-serif; line-height: 1.6;">How a new C++ and Python architecture is detecting spoofing and wash trading in milliseconds, restoring transparency to algorithmic stock markets.</p>
+            
+            <div class="byline">
+                <div class="author-avatar">TP</div>
+                <div>
+                    <div style="font-weight: 600; color: #e5e7eb;">Tanmay Pondhe</div>
+                    <div style="font-size: 0.9rem; color: #6b7280;">Lead Architect & Developer · 7 min read</div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- TRADING VIEW EMBED -->
+        <div class="tradingview-widget-container" style="height: 500px; width: 100%; margin-bottom: 3rem; border-radius: 8px; overflow: hidden; border: 1px solid #27272a;">
+          <div class="tradingview-widget-container__widget" style="height:calc(100% - 32px); width:100%"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {
+          "autosize": true,
+          "symbol": "NASDAQ:AAPL",
+          "interval": "1",
+          "timezone": "Etc/UTC",
+          "theme": "dark",
+          "style": "1",
+          "locale": "en",
+          "enable_publishing": false,
+          "backgroundColor": "#050505",
+          "gridColor": "#1f2937",
+          "hide_top_toolbar": true,
+          "hide_legend": true,
+          "save_image": false,
+          "container_id": "tradingview_1"
+        }
+          </script>
+          <div style="text-align: center; color: #6b7280; font-family: 'Inter', sans-serif; font-size: 0.85rem; padding: 10px 0; background-color: #0a0a0c;">Live Level-2 Order Book Volatility Analysis (Simulated Target Data)</div>
+        </div>
+        
+        <article class="article-body">
+            <p class="drop-cap">
+                T</p><p>he modern financial markets are a battlefield of latency. In the high-frequency trading (HFT) era, million-dollar transactions occur in fractions of a microsecond. But this incredible speed has fostered a dark side: algorithmic manipulation. Institutional actors deploy highly sophisticated bots that artificially inflate stock prices using tactics like Spoofing—creating massive fake buy walls that vanish seconds before execution—and Wash Trading.
+            </p>
+            
+            <p>
+                Traditional monitoring systems, which rely heavily on macroscopic volume analysis and lagging indicators, are comprehensively blind to these micro-anomalies. By the time a regulatory dashboard flags an unusual volume spike, the algorithms have already extracted retail liquidity and vanished back into the noise. We needed a fundamental technical paradigm shift.
+            </p>
+
+            <h2>The Architecture of a "Digital Fingerprint"</h2>
+            <p>
+                To combat this anomaly, the solution isn't looking at generic trade volume; it's looking at behavioral metadata down to the millisecond. The <em>Digital Fingerprint Tracking System</em> is a massive-scale pipeline designed specifically to neutralize the core advantage of toxic HFT bots: their distributed anonymity. 
+            </p>
+            <p>
+                Built natively in C++ for microscopic socket ingestion, the system streams raw, unaggregated Level-2 market data directly from equity exchanges. Once the data reaches the ingestion layer, it passes into a highly distributed Python/Node.js environment. Here, the system begins calculating latency profiles—the exact millisecond gaps between an entity's order placement and its cancellation.
+            </p>
+
+            <blockquote style="border-left: 2px solid #fff; padding-left: 2rem; margin: 3rem 0;">
+                <p style="font-size: 1.3rem; font-style: italic; color: #fff; margin: 0; line-height: 1.6;">"We are no longer tracking exactly what is being traded. We track exactly <em>how</em> it is being traded. Every algorithm leaves an undeniable mathematical footprint, no matter how fast it moves."</p>
+            </blockquote>
+
+            <h2>Exposing Spoofing in Real-Time</h2>
+            <p>
+                When a malicious bot attempts to spoof an order book, it must maintain a very specific Order Cancellation Ratio (OCR) to avoid accidental execution and risk exposure. By mapping out these OCRs continuously, our machine learning models cluster anonymous network actors into identifiable bot profiles based on behavior trees. The platform can instantly recognize when "Bot Cluster Alpha" suddenly places 50,000 dummy buy orders on a technology stock just as "Bot Cluster Beta" begins liquidating its massive holding.
+            </p>
+            
+            <p>
+                The impact of this pipeline cannot be overstated. By assigning a persistent digital footprint to hidden liquidity providers based purely on their behavioral execution micro-patterns, the system effectively strips away the opacity utilized by modern market manipulation syndicates. It transforms a dark-pool market into a mathematically transparent arena.
+            </p>
+            
+        </article>
+        
+        <div style="margin-top: 4rem; padding-top: 3rem; border-top: 1px solid #27272a; text-align: center;">
+            <p style="font-family: 'Inter', sans-serif; color: #a1a1aa; margin-bottom: 2rem;">Read more projects detailing complex systemic solutions in the main portfolio.</p>
+            <a href="index.html" class="cta-btn primary-btn large-btn" style="font-family: 'Inter', sans-serif;">View Full Code Portfolio</a>
+        </div>
+
+    </div>
+</body>
+</html>

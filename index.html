@@ -4,13 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tanmay Pondhe | 3D Portfolio</title>
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700;800&display=swap"
-        rel="stylesheet">
+    <title>Tanmay Pondhe | Developer Portfolio</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Main Style -->
@@ -21,181 +15,62 @@
 
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="logo">TP<span>.</span></div>
-        
-        <!-- Mobile Hamburger Button -->
-        <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
-        
-        <div class="nav-links">
-            <a href="#about" class="nav-link">About</a>
-            <a href="#experience" class="nav-link">Experience</a>
-            <a href="#education" class="nav-link">Education & Skills</a>
-            <a href="#projects" class="nav-link">Projects</a>
-            <a href="sample-resume/Tanmay_Resume.pdf" download="Tanmay_Resume.pdf" class="download-btn">
-                <span>Download Resume</span>
-                <i class="fas fa-file-download"></i>
-            </a>
+        <div class="nav-container">
+            <a href="#" class="logo">TP<span>.</span></a>
+            <div class="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="sample-resume/Tanmay_Resume.pdf" download="Tanmay_Resume.pdf" class="btn btn-primary">
+                    <i class="fas fa-file-download"></i> Resume
+                </a>
+            </div>
+            <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
         </div>
     </nav>
 
-    <main class="main-container">
-        <!-- Section 1: Hero & Summary -->
-        <section class="section hero" id="about">
-            <div class="hero-content">
-                <p class="greeting">Hello, world! I am</p>
-                <h1 class="hero-title glitch" data-text="Tanmay Pondhe">Tanmay Pondhe</h1>
-                <h2 class="hero-subtitle">Software Engineering Student <span class="accent-text">&amp; UI/UX
-                        Designer</span></h2>
-                <div class="hero-desc-container">
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-wrapper">
+                <div class="hero-content">
+                    <span class="hero-tag">Software Engineer & Designer</span>
+                    <h1 class="hero-title">Tanmay Pondhe</h1>
                     <p class="hero-desc">
-                        Enthusiastic and detail-oriented Software Engineering student. Passionate about problem-solving,
-                        algorithms, and full-stack web development. Eager to leverage academic foundations and hands-on
-                        project experience to grow and contribute to impactful tech projects.
+                        I build structured, efficient, and user-centric digital experiences. Currently studying Software Engineering and focusing on full-stack development.
                     </p>
-                </div>
-                <div class="hero-cta">
-                    <a href="#projects" class="cta-btn primary-btn"><i class="fas fa-folder-open"></i> View Projects</a>
-                    <a href="sample-resume/Tanmay_Resume.pdf" download="Tanmay_Resume.pdf" class="download-btn secondary-btn"><i class="fas fa-file-download"></i> Download Resume</a>
-                </div>
-                <div class="social-links" style="margin-top: 2rem; justify-content: flex-start;">
-                    <a href="https://www.linkedin.com/in/tanmay-pondhe-5b820b3a3" target="_blank" class="social-link"
-                        title="LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a>
-                    <a href="https://github.com/tanmaypondhe" target="_blank" class="social-link" title="GitHub"><i
-                            class="fab fa-github fa-lg"></i></a>
-                </div>
-            </div>
-
-            <!-- Professional Dashboard Element -->
-            <div class="hero-dashboard-wrapper"
-                style="flex: 0.8; display: flex; flex-direction: column; justify-content: center; width: 100%;">
-                <div class="glass-panel dashboard-panel"
-                    style="padding: 2.5rem; border-color: rgba(255,255,255,0.15); background: linear-gradient(135deg, #0a0a0c, #111116); box-shadow: 0 15px 40px rgba(0,0,0,0.8);">
-                    <div
-                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 1rem;">
-                        <span
-                            style="font-size: 0.85rem; font-weight: 600; color: #a1a1aa; letter-spacing: 1px; text-transform: uppercase;"><i
-                                class="fas fa-server"></i> Platform Status</span>
-                        <span
-                            style="font-size: 0.8rem; color: #10b981; font-weight: 600; display: flex; align-items: center; gap: 0.6rem;"><span
-                                style="width: 8px; height: 8px; border-radius: 50%; background: #10b981; box-shadow: 0 0 10px #10b981;"></span>
-                            SYSTEM OPERATIONAL</span>
+                    <div class="hero-btns">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="sample-resume/Tanmay_Resume.pdf" download="Tanmay_Resume.pdf" class="btn btn-secondary">Download Resume</a>
                     </div>
-
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem;">
-                        <div>
-                            <p
-                                style="font-size: 0.85rem; color: #a1a1aa; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">
-                                Overall Progress</p>
-                            <h4 style="font-size: 2.2rem; font-weight: 700; color: #fff;">96.8<span
-                                    style="font-size: 1.2rem; color: #a1a1aa;">%</span> <span
-                                    style="color: #10b981; font-size: 0.95rem; margin-left: 0.8rem; vertical-align: middle;"><i
-                                        class="fas fa-arrow-up"></i> Stable</span></h4>
-                        </div>
-                        <div>
-                            <p
-                                style="font-size: 0.85rem; color: #a1a1aa; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">
-                                Active Prototypes</p>
-                            <h4 style="font-size: 2.2rem; font-weight: 700; color: #fff;">08<span
-                                    style="color: #60a5fa; font-size: 1rem; margin-left: 0.8rem; vertical-align: middle; font-weight: 500;">Deployed</span>
-                            </h4>
-                        </div>
-                    </div>
-
-                    <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.8rem;">
-                        <p
-                            style="font-size: 0.85rem; color: #a1a1aa; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.2rem;">
-                            <i class="fas fa-filter"></i> Matrix Filters</p>
-                        <div class="filter-dashboard" style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
-                            <button class="filter-btn active" data-filter="all">All Projects</button>
-                            <button class="filter-btn" data-filter="c++">C++</button>
-                            <button class="filter-btn" data-filter="python">Python</button>
-                            <button class="filter-btn" data-filter="js">JS/HTML/CSS</button>
-                            <button class="filter-btn" data-filter="ui-ux">UI/UX Layouts</button>
-                        </div>
-                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-image-placeholder"></div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 2: Experience & Achievements -->
-        <section class="section experience" id="experience">
+        <!-- About Section -->
+        <section class="section" id="about">
             <div class="section-header">
-                <h2 class="section-title">Experience & Achievements <span class="accent-dot">.</span></h2>
+                <h2 class="section-title">About Me</h2>
             </div>
-
-            <div class="timeline">
-                <div class="timeline-line"></div>
-
-                <!-- Expanded Highlight: Design Head -->
-                <div class="timeline-item card3d highlight-card">
-                    <div class="timeline-dot"></div>
-                    <div class="card-content glass-panel">
-                        <div class="card-header">
-                            <h3>Design Head</h3>
-                            <span class="card-date">Current</span>
-                        </div>
-                        <p class="org accent-text">Yuva Marathi Club | VIT Vellore</p>
-                        <p class="desc">Leading the creative direction for one of the most vibrant cultural clubs on
-                            campus. Crafting memorable posters, defining visual identity, and combining aesthetics with
-                            purpose to engage thousands of students.</p>
-                        <div class="tags">
-                            <span class="tag">Leadership</span>
-                            <span class="tag">UI/UX</span>
-                            <span class="tag">Visual Design</span>
-                        </div>
+            <div class="about-wrapper">
+                <div class="about-visual">
+                    <div class="card" style="height: 300px; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--border);">
+                        <i class="fas fa-user-astronaut"></i>
                     </div>
                 </div>
-
-                <div class="timeline-item card3d">
-                    <div class="timeline-dot"></div>
-                    <div class="card-content glass-panel">
-                        <div class="card-header">
-                            <h3>Technical Team Member</h3>
-                            <span class="card-date">Aug 2025 - Present</span>
-                        </div>
-                        <p class="org">VIT Tech Club | Vellore, India</p>
-                        <p class="desc">Collaborated with a team of students to build tools and platforms for
-                            college-wide tech fests and events. Assisted in organizing workshops on Git, GitHub, and
-                            introductory web development for peer students.</p>
-                        <div class="tags">
-                            <span class="tag">Web Dev</span>
-                            <span class="tag">Mentorship</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item card3d">
-                    <div class="timeline-dot"></div>
-                    <div class="card-content glass-panel">
-                        <div class="card-header">
-                            <h3>Hackathon Participant</h3>
-                            <span class="card-date">Dec 2025</span>
-                        </div>
-                        <p class="org">VIT Code-a-Thon 2025</p>
-                        <p class="desc">Developed a smart campus navigation prototype using web technologies within 48
-                            hours. Collaborated in a team of 4 to design the frontend and integrate real-time tracking
-                            features.</p>
-                        <div class="tags">
-                            <span class="tag">Hackathon</span>
-                            <span class="tag">Frontend</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item card3d">
-                    <div class="timeline-dot"></div>
-                    <div class="card-content glass-panel">
-                        <div class="card-header">
-                            <h3>Achievements</h3>
-                        </div>
-                        <p class="desc" style="margin-bottom: 0;">
-                        <ul style="padding-left: 1.5rem; color: var(--text-secondary);">
-                            <li style="margin-bottom: 0.5rem;">Active problem solver on platforms like LeetCode and
-                                HackerRank.</li>
-                            <li>Completed foundational certifications in Web Development and C++ programming.</li>
-                        </ul>
-                        </p>
-                    </div>
+                <div class="about-content">
+                    <h3>A personal approach to code.</h3>
+                    <p class="about-text">
+                        I'm a detail-oriented Software Engineering student at VIT Vellore. My approach to development is rooted in core engineering principles: efficiency, scalability, and clarity.
+                    </p>
+                    <p class="about-text">
+                        Beyond the IDE, I lead design as the Head of Yuva Marathi Club, where I bridge the gap between technical logic and visual storytelling. I believe the best software isn't just functional—it's intuitive and human-made.
+                    </p>
                 </div>
             </div>
         </section>

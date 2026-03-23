@@ -35,9 +35,6 @@ body {
 @media (pointer: fine) {
     body, a, button, input, textarea, .filter-btn, .clickable { cursor: none !important; }
 }
-@media (pointer: coarse), (hover: none), (max-width: 768px) {
-    .cursor, .cursor-dot { display: none !important; opacity: 0 !important; visibility: hidden !important; }
-}
 
 /* Aurora Background Orbs */
 body::before, body::after {
@@ -69,8 +66,8 @@ body::after {
 }
 
 /* Custom Cursor */
-.cursor { width: 36px; height: 36px; border: 1.5px solid rgba(255,255,255,0.4); border-radius: 50%; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999; backdrop-filter: blur(1px); transform-origin: center; transition: background-color 0.3s, border-color 0.3s; }
-.cursor-dot { width: 6px; height: 6px; background-color: #fff; border-radius: 50%; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 10000; box-shadow: 0 0 10px #fff; transform-origin: center; }
+.cursor { display: none; opacity: 0; width: 36px; height: 36px; border: 1.5px solid rgba(255,255,255,0.4); border-radius: 50%; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999; backdrop-filter: blur(1px); transform-origin: center; transition: background-color 0.3s, border-color 0.3s, opacity 0.2s ease; }
+.cursor-dot { display: none; opacity: 0; width: 6px; height: 6px; background-color: #fff; border-radius: 50%; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 10000; box-shadow: 0 0 10px #fff; transform-origin: center; transition: opacity 0.2s ease; }
 
 h1, h2, h3, h4, .logo { font-family: var(--font-heading); letter-spacing: -0.02em; }
 .gradient-text { background: var(--accent-gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; font-weight: 800; }

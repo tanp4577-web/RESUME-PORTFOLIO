@@ -2,9 +2,12 @@
 const cursor = document.querySelector('.cursor');
 const cursorDot = document.querySelector('.cursor-dot');
 
-const isDesktop = window.matchMedia("(pointer: fine)").matches;
+let isTouchDevice = false;
+window.addEventListener('touchstart', () => { isTouchDevice = true; }, { passive: true });
 
-if(cursor && cursorDot && isDesktop) {
+if(cursor && cursorDot) {
+    let hasMoved = false;
+        
     // GSAP quickTo for 60fps physics tracking
     gsap.set(cursor, {xPercent: -50, yPercent: -50});
     gsap.set(cursorDot, {xPercent: -50, yPercent: -50});
@@ -16,6 +19,19 @@ if(cursor && cursorDot && isDesktop) {
     let yToDot = gsap.quickTo(cursorDot, "y", {duration: 0.1, ease: "power3"});
 
     window.addEventListener("mousemove", e => {
+        if (isTouchDevice) return; // Prevent simulated mobile 'mousemove' from triggering the cursor
+        
+        if (!hasMoved) {
+            hasMoved = true;
+            cursor.style.display = 'block';
+            cursorDot.style.display = 'block';
+            // Slight delay for CSS opacity transition to trigger
+            setTimeout(() => {
+                cursor.style.opacity = '1';
+                cursorDot.style.opacity = '1';
+            }, 10);
+        }
+
         xTo(e.clientX);
         yTo(e.clientY);
         xToDot(e.clientX);
@@ -26,10 +42,12 @@ if(cursor && cursorDot && isDesktop) {
     const interactables = document.querySelectorAll('a, button, input, textarea');
     interactables.forEach(el => {
         el.addEventListener('mouseenter', () => {
+            if (isTouchDevice) return;
             gsap.to(cursor, { scale: 2.2, backgroundColor: 'rgba(255,255,255,0.08)', borderColor: 'transparent', duration: 0.3 });
             gsap.to(cursorDot, { scale: 0, duration: 0.2 });
         });
         el.addEventListener('mouseleave', () => {
+            if (isTouchDevice) return;
             gsap.to(cursor, { scale: 1, backgroundColor: 'transparent', borderColor: 'rgba(255,255,255,0.4)', duration: 0.3 });
             gsap.to(cursorDot, { scale: 1, duration: 0.2 });
         });

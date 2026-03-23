@@ -138,39 +138,57 @@
                 cell.className = 'cell';
                 if(i === 0) cell.classList.add('start');
                 if(i === 99) cell.classList.add('end');
+                // Dynamic maze generation - 25% chance of wall
+                if(i !== 0 && i !== 99 && Math.random() < 0.25) {
+                    cell.classList.add('wall');
+                }
                 grid.appendChild(cell);
                 cells.push(cell);
             }
-            // Add static walls
-            [12, 22, 32, 42, 52, 62, 72, 85, 75, 65, 55, 45].forEach(idx => cells[idx].classList.add('wall'));
         }
 
         async function startSim() {
             if(isRunning) return;
             isRunning = true;
             
-            // Randomly pick an algorithm "path" for variety
-            const useDijkstra = Math.random() > 0.5;
-            const pathAStar = [0, 1, 2, 3, 4, 14, 24, 34, 44, 54, 64, 74, 84, 94, 95, 96, 97, 98, 99];
-            const pathDijkstra = [0, 10, 20, 30, 40, 50, 60, 70, 80, 81, 82, 83, 84, 94, 95, 96, 97, 98, 99];
-            const chosenPath = useDijkstra ? pathDijkstra : pathAStar;
+            // Breadth-First-Search (BFS) Simulation for paths
+            const queue = [0];
+            const visited = new Set([0]);
+            const parent = {};
+            let found = false;
 
-            // Simulate expansion
-            for(let i=0; i<cells.length; i++) {
-                if(cells[i].classList.contains('wall') || cells[i].classList.contains('start') || cells[i].classList.contains('end')) continue;
-                
-                // Expansion pattern based on algorithm
-                let shouldVisit = useDijkstra ? (i < 90) : (i % 3 === 0 || i > 60);
-                if(shouldVisit) {
-                    await new Promise(r => setTimeout(r, 10));
-                    cells[i].classList.add('visited');
+            while(queue.length > 0) {
+                const curr = queue.shift();
+                if(curr === 99) { found = true; break; }
+
+                const neighbors = [];
+                const x = curr % size;
+                const y = Math.floor(curr / size);
+
+                if(x < size - 1) neighbors.push(curr + 1);
+                if(x > 0) neighbors.push(curr - 1);
+                if(y < size - 1) neighbors.push(curr + size);
+                if(y > 0) neighbors.push(curr - size);
+
+                for(let next of neighbors) {
+                    if(!visited.has(next) && !cells[next].classList.contains('wall')) {
+                        visited.add(next);
+                        parent[next] = curr;
+                        queue.push(next);
+                        
+                        await new Promise(r => setTimeout(r, 15));
+                        cells[next].classList.add('visited');
+                    }
                 }
             }
 
-            // Draw final optimized path
-            for(let idx of chosenPath) {
-                await new Promise(r => setTimeout(r, 40));
-                cells[idx].classList.add('path');
+            if(found) {
+                let curr = 99;
+                while(curr !== undefined) {
+                    cells[curr].classList.add('path');
+                    curr = parent[curr];
+                    await new Promise(r => setTimeout(r, 50));
+                }
             }
             isRunning = false;
         }

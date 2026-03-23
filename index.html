@@ -4,153 +4,309 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tanmay Pondhe - Resume</title>
-    <link rel="stylesheet" href="sample-resume/resume.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Tanmay Pondhe | Professional Engineer Portfolio</title>
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="sample-resume/styles.css">
 </head>
 
 <body>
-    <div class="resume-container">
-        <!-- Header -->
-        <header class="header">
-            <div class="profile-info">
-                <h1>Tanmay Pondhe</h1>
-                <h2>Software Engineering Student | VIT Vellore</h2>
-                <div class="contact-links">
-                    <a href="#"><i class="fas fa-envelope"></i> tanmay.pondhe@example.com</a>
-                    <a href="#"><i class="fas fa-phone"></i> +91 98765 43210</a>
-                    <a href="#"><i class="fas fa-map-marker-alt"></i> Vellore, India</a>
-                    <a href="#"><i class="fab fa-linkedin"></i> linkedin.com/in/tanmaypondhe</a>
-                    <a href="#"><i class="fab fa-github"></i> github.com/tanmaypondhe</a>
-                </div>
-            </div>
-        </header>
 
-        <div class="main-content">
-            <!-- Left Column -->
-            <div class="left-col">
-                <section class="section">
-                    <h3 class="section-title">Summary</h3>
-                    <p>Enthusiastic and detail-oriented Software Engineering student in my 2nd year of the Integrated
-                        M.Tech program at VIT Vellore. Passionate about problem-solving, algorithms, and full-stack web
-                        development. Eager to leverage academic foundations and hands-on project experience to grow and
-                        contribute to impactful tech projects.</p>
-                </section>
-                
+    <!-- Section 1: Dynamic Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="#home" class="logo">
+                TANMAY<span>.</span>
+            </a>
 
-                <section class="section">
-                    <h3 class="section-title">Experience & Extracurriculars</h3>
-
-                    <div class="experience-item">
-                        <div class="exp-header">
-                            <h4>Technical Team Member</h4>
-                            <span class="date">Aug 2025 - Present</span>
-                        </div>
-                        <div class="company">VIT Tech Club | Vellore, India</div>
-                        <ul>
-                            <li>Collaborated with a team of students to build tools and platforms for college-wide tech
-                                fests and events.</li>
-                            <li>Assisted in organizing workshops on Git, GitHub, and introductory web development for
-                                peer students.</li>
-                        </ul>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="exp-header">
-                            <h4>Hackathon Participant</h4>
-                            <span class="date">Dec 2025</span>
-                        </div>
-                        <div class="company">VIT Code-a-Thon 2025</div>
-                        <ul>
-                            <li>Developed a smart campus navigation prototype using web technologies within 48 hours.
-                            </li>
-                            <li>Collaborated in a team of 4 to design the frontend and integrate real-time tracking
-                                features.</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <section class="section">
-                    <h3 class="section-title">Academic Projects</h3>
-                    <div class="project-item">
-                        <h4>Library Management System <a href="#"><i class="fab fa-github"></i></a></h4>
-                        <p>Designed and built a console-based library management system in <strong>C++</strong>
-                            implementing Object-Oriented Programming (OOP) principles. Includes book tracking, user
-                            authentication, and due date calculation.</p>
-                    </div>
-                    <div class="project-item">
-                        <h4>Personal Portfolio Website <a href="#"><i class="fas fa-external-link-alt"></i></a></h4>
-                        <p>Created a modern, responsive portfolio website from scratch using <strong>HTML, CSS, and
-                                JavaScript</strong> to showcase academic projects and coding achievements.</p>
-                    </div>
-                    <div class="project-item">
-                        <h4>Data Analysis Utility <a href="#"><i class="fab fa-github"></i></a></h4>
-                        <p>Developed a <strong>Python</strong> script using Pandas to clean and process student
-                            attendance and grade data, automating standard spreadsheet tasks.</p>
-                    </div>
-                </section>
+            <!-- Center Links -->
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link active-link">Home</a>
+                <a href="#education" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Feedback</a>
             </div>
 
-            <!-- Right Column -->
-            <div class="right-col">
-                <section class="section">
-                    <h3 class="section-title">Education</h3>
-                    <div class="education-item">
-                        <h4>Integrated M.Tech in Software Engineering</h4>
-                        <div class="university">Vellore Institute of Technology (VIT), Vellore</div>
-                        <div class="date">Jul 2024 - Expected 2029</div>
-                        <ul
-                            style="list-style-type: none; margin-top: 0.5rem; color: var(--text-muted); font-size: 0.9rem;">
-                            <li><strong>Current Year:</strong> 2nd Year</li>
-                            <li><strong>Relevant Coursework:</strong> Data Structures & Algorithms, Object-Oriented
-                                Programming, Database Management Systems, Web Development, Computer Architecture.</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <section class="section">
-                    <h3 class="section-title">Skills</h3>
-                    <div class="skills-category">
-                        <h4>Programming Languages</h4>
-                        <div class="skills-list">
-                            <span class="skill-tag">C / C++</span>
-                            <span class="skill-tag">Java</span>
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">JavaScript</span>
-                        </div>
-                    </div>
-                    <div class="skills-category">
-                        <h4>Web Technologies</h4>
-                        <div class="skills-list">
-                            <span class="skill-tag">HTML5</span>
-                            <span class="skill-tag">CSS3</span>
-                            <span class="skill-tag">React.js (Basic)</span>
-                            <span class="skill-tag">Bootstrap</span>
-                        </div>
-                    </div>
-                    <div class="skills-category">
-                        <h4>Tools & Concepts</h4>
-                        <div class="skills-list">
-                            <span class="skill-tag">Data Structures</span>
-                            <span class="skill-tag">OOP</span>
-                            <span class="skill-tag">Git & GitHub</span>
-                            <span class="skill-tag">SQL / MySQL</span>
-                            <span class="skill-tag">VS Code</span>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="section">
-                    <h3 class="section-title">Achievements</h3>
-                    <ul class="cert-list">
-                        <li>Active problem solver on platforms like LeetCode and HackerRank.</li>
-                        <li>Completed foundational certifications in Web Development and C++ programming.</li>
-                    </ul>
-                </section>
+            <!-- Right: CTA + Mobile Toggle -->
+            <div class="nav-right">
+                <a href="TANMAY_RESUME.pdf" download="TANMAY_RESUME.pdf" class="download-btn">
+                    <i class="fas fa-file-download"></i>
+                    <span>Download CV</span>
+                </a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                </button>
             </div>
         </div>
-    </div>
+    </nav>
+
+    <main class="container">
+        <!-- Section 1: Hero Intro -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="hero-greeting reveal">Hello, I'm</div>
+                <h1 class="hero-title reveal">TANMAY <span class="gradient-text">PONDHE</span></h1>
+                <p class="hero-subtitle reveal">Software Engineer & Creative Problem Solver</p>
+                <div class="hero-description reveal">
+                    Integrated M.Tech student at VIT Vellore. Scaling 
+                    applications with logic, debugging the complex, and designing with a human-centric focus.
+                </div>
+                <div class="hero-btns reveal">
+                    <a href="#projects" class="cta-btn primary-btn">View My Work</a>
+                    <a href="#contact" class="cta-btn secondary-btn">Contact Me</a>
+                </div>
+            </div>
+            
+            <div class="hero-visual reveal">
+                <div class="visual-card">
+                    <div class="visual-accent"></div>
+                    <div class="visual-inner">
+                        <i class="fas fa-terminal"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Education & Skills -->
+        <section class="section" id="education">
+            <div class="section-header reveal">
+                <h2 class="section-title">Education & Expertise <span class="accent-dot">.</span></h2>
+            </div>
+
+            <div class="edu-skills-container">
+                <!-- Education Card -->
+                <div class="education-block card3d reveal">
+                    <div class="card-content">
+                        <div class="section-heading-small"><i class="fas fa-graduation-cap"></i> Academic Background</div>
+                        <h3 class="card-title">Integrated M.Tech in Software Engineering</h3>
+                        <p class="card-org">Vellore Institute of Technology (VIT)</p>
+                        <span class="card-date">2024 - 2029</span>
+
+                        <div class="card-details">
+                            <p><strong>Integrated M.Tech:</strong> Specialized in scalable system architecture and software life cycle management.</p>
+                            <p><strong>Status:</strong> 2nd Year Student</p>
+                        </div>
+                        
+                        <div class="tags">
+                            <span class="tag">DSA</span>
+                            <span class="tag">OOP</span>
+                            <span class="tag">DBMS</span>
+                            <span class="tag">System Design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Card (Graphs) -->
+                <div class="skills-block card3d reveal">
+                    <div class="card-content">
+                        <div class="section-heading-small"><i class="fas fa-chart-bar"></i> Engineering Proficiencies</div>
+
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>C++ / Performance Logic</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-bar-fill" data-width="95%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>Python (Automation & Data)</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-bar-fill" data-width="90%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>Full-Stack Development</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-bar-fill" data-width="85%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>UI/UX & Graphics</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-bar-fill" data-width="85%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="core-principles">
+                            <h4 class="mini-heading">Core Skills</h4>
+                            <div class="tags">
+                                <span class="tag">Git VCS</span>
+                                <span class="tag">Clean Code</span>
+                                <span class="tag">Agile Architecture</span>
+                                <span class="tag">Problem Solving</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Project Portfolio -->
+        <section class="section projects" id="projects">
+            <div class="section-header reveal">
+                <h2 class="section-title">Project Portfolio <span class="accent-dot">.</span></h2>
+                <p class="section-subtitle">Explore my technical implementations and research work.</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1: Stock Market Fingerprint -->
+                <div class="project-card highlight-card card3d reveal">
+                    <a href="sample-resume/stock-fingerprint.html" class="card-link-wrapper"></a>
+                    <div class="card-content">
+                        <div class="project-icon"><i class="fas fa-fingerprint"></i></div>
+                        <div class="project-info">
+                            <h3 class="card-title">Stock Fingerprint Tracking</h3>
+                            <p class="card-description">Algorithmic tracking system designed to monitor high-frequency trading footprints and institutional investor micro-patterns.</p>
+                            <div class="tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">C++</span>
+                                <span class="tag">Big Data</span>
+                            </div>
+                            <div class="project-actions">
+                                <span class="project-link">View Case Study <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: VIT Event Portal -->
+                <div class="project-card card3d reveal">
+                    <a href="sample-resume/vit-events.html" class="card-link-wrapper"></a>
+                    <div class="card-content">
+                        <div class="project-icon"><i class="fas fa-ticket-alt"></i></div>
+                        <h3 class="card-title">VIT Event Portal</h3>
+                        <p class="card-description">Live full-stack event platform fetching data directly from VIT Vellore with secure Razorpay payment integration.</p>
+                        <div class="tags">
+                            <span class="tag">JS</span>
+                            <span class="tag">Razorpay</span>
+                            <span class="tag">Scraping</span>
+                        </div>
+                        <div class="project-actions">
+                            <span class="project-link">View Project <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: FinTech Concept -->
+                <div class="project-card card3d reveal">
+                    <a href="sample-resume/ui-fintech.html" class="card-link-wrapper"></a>
+                    <div class="card-content">
+                        <div class="project-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h3 class="card-title">FinTech Experience</h3>
+                        <p class="card-description">Conceptual banking UI focused on glassmorphism principles and high-conversion user journeys.</p>
+                        <div class="tags">
+                            <span class="tag">UI/UX</span>
+                            <span class="tag">Figma</span>
+                            <span class="tag">CSS</span>
+                        </div>
+                        <div class="project-actions">
+                            <span class="project-link">View Design <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Contact -->
+        <section class="section contact" id="contact">
+            <div class="section-header reveal">
+                <h2 class="section-title">Get in Touch <span class="accent-dot">.</span></h2>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info reveal">
+                    <h3 class="contact-heading">Let's build something great.</h3>
+                    <p class="contact-description">Whether you have a technical question or a project proposal, my inbox is always open.</p>
+                    
+                        <div class="contact-list">
+                            <a href="mailto:tanmaypondhe7777@gmail.com" class="contact-item">
+                                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                                <div class="contact-text">
+                                    <h4>Email</h4>
+                                    <span>tanmaypondhe7777@gmail.com</span>
+                                </div>
+                            </a>
+                            
+                            <a href="https://www.linkedin.com/in/tanmay-pondhe-5b820b3a3" target="_blank" class="contact-item">
+                                <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+                                <div class="contact-text">
+                                    <h4>LinkedIn</h4>
+                                    <span>Connect with me</span>
+                                </div>
+                            </a>
+
+                            <a href="https://github.com/tanmaypondhe" target="_blank" class="contact-item">
+                                <div class="contact-icon"><i class="fab fa-github"></i></div>
+                                <div class="contact-text">
+                                    <h4>GitHub</h4>
+                                    <span>View Source Code</span>
+                                </div>
+                            </a>
+                        </div>
+                </div>
+                
+                <div class="contact-form-wrapper reveal">
+                    <form id="portfolio-form" class="professional-form" onsubmit="event.preventDefault(); alert('Message sent!');">
+                        <div class="form-group">
+                            <label><i class="fas fa-user-circle"></i> Full Name</label>
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-paper-plane"></i> Professional Email</label>
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-comment-alt"></i> Collaborative Message</label>
+                            <textarea rows="4" placeholder="How can I help with your next project?" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-btn primary-btn">
+                            <span>Send Message</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Simple Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-wrap reveal">
+                    <div class="footer-logo">TANMAY<span>.</span></div>
+                    <div class="footer-socials">
+                        <a href="https://www.linkedin.com/in/tanmay-pondhe-5b820b3a3" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/tanmaypondhe" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                    <p class="footer-copy">© 2026 Tanmay Pondhe. Built with high-end simplicity.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- GSAP Core & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="sample-resume/script.js"></script>
 </body>
 
 </html>

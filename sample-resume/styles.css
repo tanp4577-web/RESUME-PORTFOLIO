@@ -402,3 +402,19 @@ h1, h2, h3, h4, .logo {
     .hero-visual { justify-content: center; }
     .edu-skills-container, .contact-container { grid-template-columns: 1fr; gap: 60px; }
 }
+
+/* Fix Project Link Clickability */
+.card-link-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    text-decoration: none;
+}
+
+.project-card {
+    position: relative;
+    cursor: pointer;
+}

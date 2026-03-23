@@ -3,142 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock Market Algorithms: The Rise of Digital Fingerprinting | Tech Insights</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Stock Digital Fingerprints | Advanced Financial Analytics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <style>
-        .article-body p {
-            font-family: 'Merriweather', serif;
-            font-size: 1.15rem;
-            line-height: 2;
-            color: #d1d5db;
-            margin-bottom: 1.8rem;
-        }
-        .article-body h2 {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.8rem;
-            color: #fff;
-            margin-top: 3rem;
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 0.5rem;
-        }
-        .drop-cap:first-letter {
-            float: left;
-            font-size: 4.5rem;
-            line-height: 0.8;
-            padding-top: 4px;
-            padding-right: 12px;
-            padding-left: 0;
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            color: #fff;
-        }
-        .byline {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: var(--text-secondary);
-            font-family: 'Inter', sans-serif;
-        }
-        .author-avatar {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: #000;
-            font-size: 1.2rem;
-        }
+        .article-container { max-width: 1100px; margin: 0 auto; padding: 120px 5%; }
+        .back-nav { margin-bottom: 40px; display: inline-flex; align-items: center; gap: 10px; color: var(--accent); text-decoration: none; font-weight: 700; transition: var(--transition); }
+        .back-nav:hover { transform: translateX(-10px); }
+        
+        .project-hero { margin-bottom: 60px; }
+        .project-title { font-size: 4rem; line-height: 1.1; margin-bottom: 20px; font-weight: 900; }
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 30px; }
+        .tech-tag { padding: 6px 16px; background: rgba(56, 189, 248, 0.1); border: 1px solid var(--border); border-radius: 100px; font-size: 0.85rem; color: var(--accent); font-weight: 600; }
+
+        .docs-grid { display: grid; grid-template-columns: 1.4fr 1.1fr; gap: 40px; margin-bottom: 60px; }
+        .content-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 24px; padding: 40px; }
+        .content-card h2 { font-size: 1.8rem; margin-bottom: 24px; color: var(--text-main); display: flex; align-items: center; gap: 12px; }
+        .content-card h2 i { color: var(--accent); }
+        .content-card p { color: var(--text-dim); line-height: 1.8; margin-bottom: 20px; font-size: 1.05rem; }
+        
+        /* Code Block Styling */
+        .code-block { background: #0a0f1d; border-radius: 16px; padding: 24px; font-family: 'Fira Code', monospace; font-size: 0.9rem; overflow-x: auto; position: relative; border: 1px solid rgba(255,255,255,0.05); }
+        .code-header { position: absolute; top: 12px; right: 20px; color: rgba(255,255,255,0.2); font-size: 0.75rem; text-transform: uppercase; }
+        .code-line { display: block; margin-bottom: 4px; }
+        .c-keyword { color: #c678dd; }
+        .c-func { color: #61afef; }
+        .c-type { color: #e5c07b; }
+        .c-comment { color: #5c6370; font-style: italic; }
+
+        /* Data Viz Simulator */
+        .viz-simulator { background: #0f172a; border-radius: 20px; border: 1px solid var(--border); overflow: hidden; display: flex; flex-direction: column; }
+        .viz-header { background: rgba(255,255,255,0.03); padding: 15px 20px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+        .viz-canvas { height: 300px; padding: 20px; display: flex; align-items: flex-end; gap: 4px; background: #020617; }
+        .viz-bar { flex: 1; background: var(--accent); border-radius: 2px 2px 0 0; transition: height 0.3s ease; min-height: 5px; opacity: 0.6; }
+        .viz-bar.anomaly { background: #ef4444; opacity: 1; box-shadow: 0 0 10px rgba(239, 68, 68, 0.5); }
+        
+        .viz-stats { padding: 20px; background: rgba(255,255,255,0.02); display: grid; grid-template-columns: 1fr 1fr; gap: 15px; border-top: 1px solid var(--border); }
+        .viz-stat-item { font-size: 0.8rem; color: var(--text-muted); }
+        .viz-stat-val { display: block; font-size: 1.1rem; color: white; font-weight: 700; margin-top: 5px; }
+
+        .impact-card { background: linear-gradient(135deg, rgba(56, 189, 248, 0.05), transparent); border: 1px solid var(--border-hover); margin-top: 40px; padding: 40px; border-radius: 24px; }
+        .reviewer-info { display: flex; align-items: center; gap: 20px; margin-top: 25px; }
+        .reviewer-avatar { width: 50px; height: 50px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--bg-main); }
+
+        @media (max-width: 900px) { .docs-grid { grid-template-columns: 1fr; } .project-title { font-size: 2.8rem; } }
     </style>
 </head>
-<body style="padding-top: 5vh; background-color: #050505;">
-    <div class="container" style="max-width: 850px; margin: 0 auto; text-align: left; padding: 2rem 5%;">
+<body style="background: #020617;">
+    <div class="article-container">
+        <a href="../index.html" class="back-nav"><i class="fas fa-arrow-left"></i> Back to Fleet</a>
         
-        <a href="../index.html" class="cta-btn secondary-btn" style="margin-bottom: 3rem; font-family: 'Inter', sans-serif;"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
-        
-        <header style="margin-bottom: 2rem;">
-            <p style="color: var(--text-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem; font-family: 'Inter', sans-serif; font-size: 0.85rem;"><i class="fas fa-layer-group"></i> Financial Technology Exclusive</p>
-            <h1 style="font-size: 3.5rem; margin-bottom: 1.5rem; line-height: 1.15; font-family: 'Inter', sans-serif; font-weight: 700; color: #fff; letter-spacing: -0.03em;">Exposing Market Manipulation: The Rise of Digital Fingerprinting in HFT</h1>
-            <p style="font-size: 1.25rem; color: #9ca3af; font-family: 'Inter', sans-serif; line-height: 1.6;">How a new C++ and Python architecture is detecting spoofing and wash trading in milliseconds, restoring transparency to algorithmic stock markets.</p>
-            
-            <div class="byline">
-                <div class="author-avatar">TP</div>
-                <div>
-                    <div style="font-weight: 600; color: #e5e7eb;">Tanmay Pondhe</div>
-                    <div style="font-size: 0.9rem; color: #6b7280;">Lead Architect & Developer · 7 min read</div>
+        <header class="project-hero">
+            <div class="hero-greeting" style="letter-spacing: 4px; font-size: 0.8rem; margin-bottom: 15px;">FINANCIAL TECHNOLOGY</div>
+            <h1 class="project-title">Stock <span class="gradient-text">Digital Fingerprints</span></h1>
+            <div class="tech-tags">
+                <span class="tech-tag">C++ 20 Ingestion</span>
+                <span class="tech-tag">Python Metadata</span>
+                <span class="tech-tag">HFT Analytics</span>
+                <span class="tech-tag">Pattern Recognition</span>
+            </div>
+            <p style="font-size: 1.25rem; color: var(--text-dim); max-width: 850px; line-height: 1.6;">
+                High-precision behavioral analytics pipeline designed to identify unique algorithmic fingerprints and detect market manipulation in real-time.
+            </p>
+        </header>
+
+        <div class="docs-grid">
+            <div class="content-card">
+                <h2><i class="fas fa-layer-group"></i> Ingestion Architecture</h2>
+                <p>The system utilizes a <strong>Lock-Free Ingestion Layer</strong> built in C++ to process Level-2 market feeds with sub-microsecond latency. Behavioral metadata is then clustered using persistent hash-maps.</p>
+                
+                <div class="code-block">
+                    <div class="code-header">market_stream.cpp</div>
+                    <span class="code-line"><span class="c-keyword">template</span> &lt;<span class="c-keyword">typename</span> T&gt;</span>
+                    <span class="code-line"><span class="c-type">void</span> <span class="c-func">Ingestor::processFeed</span>(Feed&lt;T&gt;* data) {</span>
+                    <span class="code-line">    <span class="c-comment">// Atomic sequence matching for OCR tracking</span></span>
+                    <span class="code-line">    <span class="c-keyword">auto</span> fingerprint = <span class="c-func">calculateHash</span>(data-&gt;latency_profile);</span>
+                    <span class="code-line">    <span class="c-keyword">if</span> (fingerprint.<span class="c-func">isAnomaly</span>()) {</span>
+                    <span class="code-line">        <span class="c-func">triggerAlert</span>(data-&gt;entity_id);</span>
+                    <span class="code-line">    }</span>
+                    <span class="code-line">}</span>
+                </div>
+                
+                <p style="margin-top: 24px;">By tracking the **Order Cancellation Ratio (OCR)** across multiple accounts, the platform effectively unmasks distributed bots operating under fragmented retail IDs.</p>
+            </div>
+
+            <div class="viz-simulator">
+                <div class="viz-header">
+                    <span style="font-weight: 700; font-size: 0.85rem; letter-spacing: 1px;">BEHAVIORAL VOLATILITY</span>
+                    <span id="anomaly-tag" style="font-size: 0.7rem; color: #ef4444; font-weight: 800; opacity: 0; transition: 0.3s;">ANOMALY DETECTED</span>
+                </div>
+                <div class="viz-canvas" id="viz-bars">
+                    <!-- Bars generated by JS -->
+                </div>
+                <div class="viz-stats">
+                    <div class="viz-stat-item">SCAN RATE<span class="viz-stat-val">1.2M/sec</span></div>
+                    <div class="viz-stat-item">FINGERPRINTS<span class="viz-stat-val" id="fingerprint-count">14,802</span></div>
                 </div>
             </div>
-        </header>
-        
-        <!-- TRADING VIEW EMBED -->
-        <div class="tradingview-widget-container" style="height: 500px; width: 100%; margin-bottom: 3rem; border-radius: 8px; overflow: hidden; border: 1px solid #27272a;">
-          <div class="tradingview-widget-container__widget" style="height:calc(100% - 32px); width:100%"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {
-          "autosize": true,
-          "symbol": "NASDAQ:AAPL",
-          "interval": "1",
-          "timezone": "Etc/UTC",
-          "theme": "dark",
-          "style": "1",
-          "locale": "en",
-          "enable_publishing": false,
-          "backgroundColor": "#050505",
-          "gridColor": "#1f2937",
-          "hide_top_toolbar": true,
-          "hide_legend": true,
-          "save_image": false,
-          "container_id": "tradingview_1"
-        }
-          </script>
-          <div style="text-align: center; color: #6b7280; font-family: 'Inter', sans-serif; font-size: 0.85rem; padding: 10px 0; background-color: #0a0a0c;">Live Level-2 Order Book Volatility Analysis (Simulated Target Data)</div>
-        </div>
-        
-        <article class="article-body">
-            <p class="drop-cap">
-                T</p><p>he modern financial markets are a battlefield of latency. In the high-frequency trading (HFT) era, million-dollar transactions occur in fractions of a microsecond. But this incredible speed has fostered a dark side: algorithmic manipulation. Institutional actors deploy highly sophisticated bots that artificially inflate stock prices using tactics like Spoofing—creating massive fake buy walls that vanish seconds before execution—and Wash Trading.
-            </p>
-            
-            <p>
-                Traditional monitoring systems, which rely heavily on macroscopic volume analysis and lagging indicators, are comprehensively blind to these micro-anomalies. By the time a regulatory dashboard flags an unusual volume spike, the algorithms have already extracted retail liquidity and vanished back into the noise. We needed a fundamental technical paradigm shift.
-            </p>
-
-            <h2>The Architecture of a "Digital Fingerprint"</h2>
-            <p>
-                To combat this anomaly, the solution isn't looking at generic trade volume; it's looking at behavioral metadata down to the millisecond. The <em>Digital Fingerprint Tracking System</em> is a massive-scale pipeline designed specifically to neutralize the core advantage of toxic HFT bots: their distributed anonymity. 
-            </p>
-            <p>
-                Built natively in C++ for microscopic socket ingestion, the system streams raw, unaggregated Level-2 market data directly from equity exchanges. Once the data reaches the ingestion layer, it passes into a highly distributed Python/Node.js environment. Here, the system begins calculating latency profiles—the exact millisecond gaps between an entity's order placement and its cancellation.
-            </p>
-
-            <blockquote style="border-left: 2px solid #fff; padding-left: 2rem; margin: 3rem 0;">
-                <p style="font-size: 1.3rem; font-style: italic; color: #fff; margin: 0; line-height: 1.6;">"We are no longer tracking exactly what is being traded. We track exactly <em>how</em> it is being traded. Every algorithm leaves an undeniable mathematical footprint, no matter how fast it moves."</p>
-            </blockquote>
-
-            <h2>Exposing Spoofing in Real-Time</h2>
-            <p>
-                When a malicious bot attempts to spoof an order book, it must maintain a very specific Order Cancellation Ratio (OCR) to avoid accidental execution and risk exposure. By mapping out these OCRs continuously, our machine learning models cluster anonymous network actors into identifiable bot profiles based on behavior trees. The platform can instantly recognize when "Bot Cluster Alpha" suddenly places 50,000 dummy buy orders on a technology stock just as "Bot Cluster Beta" begins liquidating its massive holding.
-            </p>
-            
-            <p>
-                The impact of this pipeline cannot be overstated. By assigning a persistent digital footprint to hidden liquidity providers based purely on their behavioral execution micro-patterns, the system effectively strips away the opacity utilized by modern market manipulation syndicates. It transforms a dark-pool market into a mathematically transparent arena.
-            </p>
-            
-        </article>
-        
-        <div style="margin-top: 4rem; padding-top: 3rem; border-top: 1px solid #27272a; text-align: center;">
-            <p style="font-family: 'Inter', sans-serif; color: #a1a1aa; margin-bottom: 2rem;">Read more projects detailing complex systemic solutions in the main portfolio.</p>
-            <a href="../index.html" class="cta-btn primary-btn large-btn" style="font-family: 'Inter', sans-serif;">View Full Code Portfolio</a>
         </div>
 
+        <div class="impact-card">
+            <p style="font-style: italic; color: var(--text-main); font-size: 1.2rem; line-height: 1.7;">
+                "Tanmay's approach to the Stock Fingerprint system is revolutionary. The latency injection profile detection he built is extremely precise and scalable. He understands the convergence of low-latency C++ and data-heavy analytics like few others."
+            </p>
+            <div class="reviewer-info">
+                <div class="reviewer-avatar">RS</div>
+                <div>
+                    <h4 style="font-size: 1.1rem; color: white;">Rohan Shinde</h4>
+                    <span style="font-size: 0.9rem; color: var(--text-dim);">Senior Software Engineer • Sector Peer</span>
+                </div>
+            </div>
+        </div>
+
+        <footer style="margin-top: 80px; text-align: center; border-top: 1px solid var(--border); padding-top: 40px;">
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Documentation for Tanmay Pondhe Portfolio &copy; 2026</p>
+        </footer>
     </div>
+
+    <script>
+        const canvas = document.getElementById('viz-bars');
+        const anomalyTag = document.getElementById('anomaly-tag');
+        const fpCount = document.getElementById('fingerprint-count');
+        const barCount = 40;
+        let bars = [];
+
+        function initViz() {
+            canvas.innerHTML = '';
+            bars = [];
+            for(let i=0; i<barCount; i++) {
+                const bar = document.createElement('div');
+                bar.className = 'viz-bar';
+                bar.style.height = (Math.random() * 60 + 10) + '%';
+                canvas.appendChild(bar);
+                bars.push(bar);
+            }
+        }
+
+        function updateViz() {
+            bars.forEach((bar, idx) => {
+                let h = parseFloat(bar.style.height);
+                h += (Math.random() - 0.5) * 10;
+                h = Math.max(10, Math.min(95, h));
+                
+                // Random anomaly
+                if(Math.random() > 0.98) {
+                    h = 100;
+                    bar.classList.add('anomaly');
+                    anomalyTag.style.opacity = 1;
+                    setTimeout(() => {
+                        bar.classList.remove('anomaly');
+                        anomalyTag.style.opacity = 0;
+                    }, 800);
+                }
+                
+                bar.style.height = h + '%';
+            });
+            fpCount.textContent = (14800 + Math.floor(Math.random() * 100)).toLocaleString();
+            requestAnimationFrame(() => setTimeout(updateViz, 100));
+        }
+
+        initViz();
+        updateViz();
+    </script>
 </body>
 </html>

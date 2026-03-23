@@ -249,23 +249,39 @@
                     </a>
                 </div>
                 <div class="reveal">
-                    <form class="professional-form" onsubmit="event.preventDefault(); alert('Message sent successfully.');">
+                    <form class="professional-form" id="contact-form">
                         <div class="form-group">
                             <label>Full Name</label>
-                            <input type="text" placeholder="Your Professional Name" required>
+                            <input type="text" id="form-name" placeholder="Your Professional Name" required>
                         </div>
                         <div class="form-group">
                             <label>Email Address</label>
-                            <input type="email" placeholder="example@official.com" required>
+                            <input type="email" id="form-email" placeholder="example@official.com" required>
                         </div>
                         <div class="form-group">
                             <label>Professional Feedback / Message</label>
-                            <textarea rows="4" placeholder="How can I assist you?" required></textarea>
+                            <textarea id="form-message" rows="4" placeholder="How can I assist you?" required></textarea>
                         </div>
                         <button type="submit" class="cta-btn primary-btn" style="width: 100%; border: none; cursor: pointer;">
-                            Send Message <i class="fas fa-arrow-right"></i>
+                            Transmit Feedback <i class="fas fa-paper-plane" style="margin-left:8px;"></i>
                         </button>
                     </form>
+                    
+                    <script>
+                        document.getElementById('contact-form').addEventListener('submit', function(e) {
+                            e.preventDefault();
+                            const name = document.getElementById('form-name').value;
+                            const email = document.getElementById('form-email').value;
+                            const message = document.getElementById('form-message').value;
+                            
+                            const subject = `Portfolio Feedback from ${name}`;
+                            const body = `Message from: ${name} (${email})\n\n${message}`;
+                            const mailtoLink = `mailto:tanmaypondhe7777@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                            
+                            window.location.href = mailtoLink;
+                            alert(`Thank you ${name}! Opening your email client to transmit this feedback.`);
+                        });
+                    </script>
                 </div>
             </div>
         </section>

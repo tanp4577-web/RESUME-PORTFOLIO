@@ -127,11 +127,18 @@
         const userInput = document.getElementById('user-input');
 
         const responses = {
-            "hello": "Hi there! System is nominal. How can I assist?",
-            "how it works": "It uses WordNet Lemmatizer to tokenize inputs and match them against a classified intent array.",
-            "code": "The core is written in Python 3.10 with high modularity for easy integration.",
+            "hello": "Hi there! I'm Tanmay's Virtual Assistant. How can I assist you today?",
+            "hi": "Hello! System is nominal and ready to showcase my capabilities.",
+            "projects": "I've built an Intelligent Py-Chatbot, a Stock Fingerprint system, and a C++ Pathfinding engine. Which one should I detail?",
+            "experience": "Currently pursuing Integrated MTech (2024-Present). I specialize in C++, Python, and System Architecture.",
+            "skills": "My core stack includes High-Performance C++, Python Automation, NLP with NLTK, and Data Analytics.",
+            "how it works": "This engine uses WordNet Lemmatizer to tokenize inputs and match them against a classified intent array.",
+            "code": "The core logic of this chatbot is written in Python 3.10. You can see a snippet in the documentation on this page!",
             "status": "All neural weights are loaded. Accuracy is currently at 98.4% for the test suite.",
-            "default": "I've logged that interaction. I understand tokenized patterns better—try asking about 'code' or 'status'!"
+            "contact": "You can reach Tanmay at tanmaypondhe7777@gmail.com or via the 'Connect' section on the main page.",
+            "email": "Tanmay's official email is: tanmaypondhe7777@gmail.com",
+            "tanmay": "Tanmay is a software engineer focused on high-performance libraries and AI systemic solutions.",
+            "default": "I'm still learning! Try asking about 'projects', 'skills', 'experience', or 'contact'."
         };
 
         chatForm.onsubmit = (e) => {
@@ -143,7 +150,8 @@
             userInput.value = '';
 
             setTimeout(() => {
-                const reply = responses[Object.keys(responses).find(k => text.includes(k))] || responses.default;
+                const keyword = Object.keys(responses).find(k => text.includes(k));
+                const reply = keyword ? responses[keyword] : responses.default;
                 addMsg(reply, 'bot');
             }, 600);
         };
@@ -153,7 +161,8 @@
             div.className = `msg msg-${sender}`;
             div.textContent = text;
             chatBody.appendChild(div);
-            chatBody.scrollTop = chatBody.scrollHeight;
+            // Smooth scroll to bottom
+            chatBody.scrollTo({ top: chatBody.scrollHeight, behavior: 'smooth' });
         }
     </script>
 </body>

@@ -183,3 +183,11 @@ input:focus, textarea:focus { border-color: var(--accent-light) !important; box-
     .timeline { padding-left: 1rem; }
     .timeline-item { padding-left: 2rem; }
 }
+
+/* Mobile Haptic Touch Feedback (Scale Down on Tap) */
+@media (pointer: coarse), (max-width: 900px) {
+    a:active, button:active, .filter-btn:active, .project-card:active, .contact-card:active, .social-link:active {
+        transform: scale(0.96) !important;
+        transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+}

@@ -7,50 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .article-container { max-width: 1000px; margin: 0 auto; padding: 120px 5%; }
-        .back-nav { margin-bottom: 40px; display: inline-flex; align-items: center; gap: 10px; color: var(--accent); text-decoration: none; font-weight: 700; transition: var(--transition); }
-        .back-nav:hover { transform: translateX(-10px); }
-        
-        .project-hero { margin-bottom: 60px; }
-        .project-title { font-size: 4rem; line-height: 1; margin-bottom: 20px; }
-        .tech-tags { display: flex; gap: 12px; margin-bottom: 30px; }
-        .tech-tag { padding: 6px 16px; background: rgba(56, 189, 248, 0.1); border: 1px solid var(--border); border-radius: 100px; font-size: 0.85rem; color: var(--accent); font-weight: 600; }
-
-        .docs-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; margin-bottom: 60px; }
-        .content-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 24px; padding: 40px; }
-        .content-card h2 { font-size: 1.8rem; margin-bottom: 24px; color: var(--text-main); display: flex; align-items: center; gap: 12px; }
-        .content-card h2 i { color: var(--accent); }
-        .content-card p { color: var(--text-dim); line-height: 1.8; margin-bottom: 20px; font-size: 1.05rem; }
-        
-        /* Code Block Styling */
-        .code-block { background: #0a0f1d; border-radius: 16px; padding: 24px; font-family: 'Fira Code', monospace; font-size: 0.9rem; overflow-x: auto; position: relative; border: 1px solid rgba(255,255,255,0.05); }
-        .code-header { position: absolute; top: 12px; right: 20px; color: rgba(255,255,255,0.2); font-size: 0.75rem; text-transform: uppercase; }
-        .code-line { display: block; margin-bottom: 4px; }
-        .c-keyword { color: #c678dd; }
-        .c-func { color: #61afef; }
-        .c-type { color: #e5c07b; }
-        .c-comment { color: #5c6370; font-style: italic; }
-
-        /* Pathfinding UI Simulator */
-        .algo-simulator { background: #0f172a; border-radius: 20px; border: 1px solid var(--border); overflow: hidden; display: flex; flex-direction: column; }
-        .algo-header { background: rgba(255,255,255,0.03); padding: 15px 20px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
-        .grid-container { display: grid; grid-template-columns: repeat(10, 1fr); gap: 2px; padding: 15px; background: rgba(2, 6, 23, 0.8); }
-        .cell { aspect-ratio: 1; border-radius: 2px; background: rgba(255,255,255,0.05); transition: all 0.2s; }
-        .cell.wall { background: #334155; }
-        .cell.start { background: #10b981; box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
-        .cell.end { background: #ef4444; box-shadow: 0 0 15px rgba(239, 68, 68, 0.4); }
-        .cell.visited { background: rgba(56, 189, 248, 0.2); transform: scale(0.8); }
-        .cell.path { background: var(--accent); box-shadow: 0 0 10px var(--accent); transform: scale(1); }
-        
-        .simulation-controls { padding: 20px; background: rgba(255,255,255,0.02); display: flex; gap: 10px; }
-        .sim-btn { flex: 1; padding: 10px; border-radius: 8px; border: 1px solid var(--border); background: transparent; color: white; cursor: pointer; font-family: inherit; font-size: 0.8rem; font-weight: 600; transition: var(--transition); }
-        .sim-btn:hover { background: var(--accent); color: var(--bg-main); border-color: var(--accent); }
-
-        .impact-card { background: linear-gradient(135deg, rgba(56, 189, 248, 0.05), transparent); border: 1px solid var(--border-hover); margin-top: 40px; padding: 30px; border-radius: 24px; }
-
-        @media (max-width: 850px) { .docs-grid { grid-template-columns: 1fr; } .project-title { font-size: 2.5rem; } }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body style="background: #020617;">
     <div class="article-container">
